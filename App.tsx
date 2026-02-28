@@ -26,11 +26,11 @@ function App() {
   const checkoutUrl = "https://loja.infinitepay.io/gsancho/xal5576-sprint-corretor-haih";
 
   const personas = [
-    "Corretores que buscam apenas curiosidade sobre IA sem intenção de aplicar",
-    "Quem procura hacks rápidos ou ferramentas isoladas sem método",
-    "Quem não tem disponibilidade para um acompanhamento de 12 meses",
-    "Quem espera que a IA substitua o atendimento humano ou venda sozinha",
-    "Quem abandona o processo após aprender o funcionamento básico das ferramentas"
+    "Quem quer apenas 'dar uma olhada' na IA — sem compromisso de transformar sua operação",
+    "Quem busca atalho mágico e não está disposto a construir um método por 12 meses",
+    "Quem acredita que a IA vai vender sozinha — sem o seu toque humano e estratégia",
+    "Quem quer uma ferramenta isolada, sem método, sem contexto, sem resultado real",
+    "Quem começa com entusiasmo mas desiste no primeiro obstáculo"
   ];
 
   const testimonials = [
@@ -201,10 +201,10 @@ function App() {
 
                 <div className="space-y-6">
                   <h2 className="text-2xl md:text-4xl text-slate-100 font-bold leading-tight max-w-2xl mx-auto lg:mx-0 drop-shadow-lg">
-                    Sua jornada para sair do ZERO a utilizar IA como um ESPECIALISTA
+                    Do zero ao domínio da IA — o método que transforma corretores em especialistas digitais
                   </h2>
                   <p className="text-lg md:text-xl text-slate-300 max-w-xl leading-relaxed mx-auto lg:mx-0 font-medium">
-                    Aprenda a transformar a Inteligência Artificial como uma ferramenta de produtividade e aumente seu faturamento.
+                    A IA não vai substituir corretores. Mas vai substituir corretores que não sabem usá-la. Em 12 meses, você vai estar do lado certo dessa história.
                   </p>
                 </div>
 
@@ -242,16 +242,16 @@ function App() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6 order-2 lg:order-1 relative z-10">
                 <div className="bg-black/90 p-8 rounded-2xl text-white shadow-xl border border-white/10 hover:border-brand-green/50 transition-all duration-300 group">
-                  <h3 className="font-bold text-xl md:text-2xl mb-3 group-hover:text-brand-green transition-colors leading-tight">Essa jornada é para o profissional que <span className="text-brand-green underline decoration-brand-green/30">cansou de perder dinheiro</span> por falta de tempo.</h3>
-                  <p className="text-slate-400 leading-relaxed text-base md:text-lg">Aprenda a criar Assistentes de IA que trabalham 24h ajudando a quebrar objeções de leads. Multiplique sua força de vendas, saia do operacional e transforme seu WhatsApp em uma máquina de lucro automático.</p>
+                  <h3 className="font-bold text-xl md:text-2xl mb-3 group-hover:text-brand-green transition-colors leading-tight">Para quem perde leads toda noite porque não consegue <span className="text-brand-green underline decoration-brand-green/30">responder rápido</span> o suficiente.</h3>
+                  <p className="text-slate-400 leading-relaxed text-base md:text-lg">Você vai criar um Assistente de IA que conhece seu portfólio inteiro, atende no WhatsApp às 2h da manhã, quebra objeções e qualifica leads — enquanto você dorme. Não é exagero. É a primeira jornada do seu Sprint.</p>
                 </div>
                 <div className="bg-black/90 p-8 rounded-2xl text-white shadow-xl border border-white/10 hover:border-brand-green/50 transition-all duration-300 group">
-                  <h3 className="font-bold text-xl md:text-2xl mb-3 group-hover:text-brand-green transition-colors leading-tight">Essa jornada é para o profissional que sabe que <span className="text-brand-green underline decoration-brand-green/30">a imagem vende</span> tanto quanto o imóvel.</h3>
-                  <p className="text-slate-400 leading-relaxed text-base md:text-lg">Abandone o amadorismo: crie Vídeos e Fotos cinematográficos com IA a custo zero. Tenha consultores virtuais especialistas e posicione-se agora como uma autoridade premium inquestionável.</p>
+                  <h3 className="font-bold text-xl md:text-2xl mb-3 group-hover:text-brand-green transition-colors leading-tight">Para quem sabe que a primeira visita acontece no <span className="text-brand-green underline decoration-brand-green/30">celular</span> — e as fotos precisam ser perfeitas.</h3>
+                  <p className="text-slate-400 leading-relaxed text-base md:text-lg">Vídeos cinematográficos. Imagens que fazem o lead sentir o apartamento antes de entrar. Tudo isso com IA, sem fotógrafo, sem editor, sem custo. Você cria em minutos o que levaria dias. E o mercado percebe a diferença imediatamente.</p>
                 </div>
                 <div className="bg-black/90 p-8 rounded-2xl text-white shadow-xl border border-white/10 hover:border-brand-green/50 transition-all duration-300 group">
-                  <h3 className="font-bold text-xl md:text-2xl mb-3 group-hover:text-brand-green transition-colors leading-tight">Essa jornada é para o profissional que <span className="text-brand-green underline decoration-brand-green/30">recusa ser refém</span> de agências.</h3>
-                  <p className="text-slate-400 leading-relaxed text-base md:text-lg">Tenha autonomia total: crie Sites de Alta Conversão em minutos e use Navegadores de IA para descobrir dados ocultos do mercado. Assuma o controle da sua operação e venda com inteligência e velocidade.</p>
+                  <h3 className="font-bold text-xl md:text-2xl mb-3 group-hover:text-brand-green transition-colors leading-tight">Para quem quer <span className="text-brand-green underline decoration-brand-green/30">autonomia total</span> — sem depender de ninguém para ter presença digital.</h3>
+                  <p className="text-slate-400 leading-relaxed text-base md:text-lg">Site de alta conversão no ar em 2 horas. Dados ocultos do mercado que os concorrentes não têm. Campanhas que convertem. Tudo nas suas mãos — sem agência, sem desenvolvedor, sem esperar semanas. Você assume o controle.</p>
                 </div>
               </div>
               <div className="order-1 lg:order-2 text-center lg:text-right relative z-10">
@@ -318,8 +318,8 @@ function App() {
 
             <div className="text-center space-y-6 max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-5xl font-black text-white leading-tight drop-shadow-xl">
-                Vários <span className="text-brand-green">"e se"</span> queimam na sua memória. <br/>
-                Não deixe a IA ser mais um deles!
+                Cada uma dessas oportunidades foi visível — <span className="text-brand-green">para quem estava presente</span> no momento certo. <br/>
+                A IA está acontecendo agora. E você está aqui.
               </h2>
             </div>
           </div>
@@ -356,10 +356,10 @@ function App() {
                  <div className="inline-block relative">
                     <div className="absolute inset-0 bg-brand-green/10 blur-[40px] rounded-full"></div>
                     <h2 className="relative z-10 font-heading text-4xl md:text-6xl font-black text-white px-8 py-2 uppercase tracking-tighter">
-                       Voz dos <span className="text-brand-green">Alunos</span>
+                       Quando a IA vira <span className="text-brand-green">resultado real</span>
                     </h2>
                  </div>
-                 <p className="text-slate-400 mt-6 text-xl max-w-2xl mx-auto font-medium">Resultados de quem decidiu parar de lutar contra a tecnologia e começou a lucrar com ela.</p>
+                 <p className="text-slate-400 mt-6 text-xl max-w-2xl mx-auto font-medium">Essas pessoas chegaram com as mesmas dúvidas que você tem agora. Leia o que mudou.</p>
                  
                  <div className="flex items-center justify-center gap-4 mt-8">
                     <button 
@@ -419,7 +419,7 @@ function App() {
                       <h2 className="font-heading text-4xl md:text-6xl font-black text-black uppercase tracking-tighter relative z-10 drop-shadow-sm">
                         JORNADA <span className="text-white bg-black px-4 py-1 transform -skew-x-12 inline-block">SPRINT</span>
                       </h2>
-                      <p className="text-black/80 text-xl font-bold uppercase tracking-[0.2em] mt-6 drop-shadow-sm">Invista na sua evolução</p>
+                      <p className="text-black/80 text-xl font-bold uppercase tracking-[0.2em] mt-6 drop-shadow-sm">O que você está recebendo</p>
                   </div>
 
                   <div className="grid lg:grid-cols-3 gap-8 mb-20">
@@ -480,7 +480,7 @@ function App() {
                              Grupo Exclusivo
                           </h3>
                           <p className="text-slate-400 text-base leading-relaxed mb-10 flex-1 font-medium">
-                             Networking de alto nível. Tire dúvidas diretamente e troque estratégias com outros corretores de elite no WhatsApp.
+                             Comunidade de corretores que já entenderam que IA é vantagem competitiva. Tire dúvidas, compartilhe resultados e evolua junto com quem está na mesma jornada — sem julgamento, com estratégia.
                           </p>
                           <div className="pt-8 border-t border-white/10">
                              <span className="text-xs font-black text-slate-600 uppercase tracking-widest block mb-2">Acesso Especial</span>
@@ -492,7 +492,7 @@ function App() {
                   <div id="investimento" className="max-w-3xl mx-auto bg-black/90 backdrop-blur-xl border border-white/10 rounded-[50px] p-10 md:p-20 text-center relative overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
                       <div className="absolute top-0 left-0 w-full h-3 bg-brand-green shadow-[0_0_20px_rgba(34,197,94,0.6)]"></div>
                       <div className="mb-10">
-                        <p className="text-slate-500 uppercase tracking-[0.4em] text-sm mb-6 font-black">Acesso Completo por 12 Meses</p>
+                        <p className="text-slate-500 uppercase tracking-[0.4em] text-sm mb-6 font-black">12 Meses de Transformação Real</p>
                         <div className="relative inline-block">
                            <span className="text-5xl md:text-7xl font-black text-slate-700 opacity-40 italic tracking-tighter">R$ 997,00</span>
                            <div className="absolute top-1/2 left-0 w-full h-1.5 bg-red-600/80 -rotate-6 shadow-lg"></div>
@@ -500,7 +500,7 @@ function App() {
                       </div>
 
                       <div className="flex flex-col items-center justify-center gap-1 mb-12">
-                          <p className="text-brand-green font-black text-xl uppercase tracking-widest mb-4 drop-shadow-md">Investimento Especial de Lançamento</p>
+                          <p className="text-brand-green font-black text-xl uppercase tracking-widest mb-4 drop-shadow-md">Investimento de Lançamento</p>
                           <div className="flex flex-col md:flex-row items-baseline justify-center gap-x-3">
                              <span className="text-4xl md:text-5xl font-black text-white/50 uppercase italic">12x de</span>
                              <div className="text-7xl md:text-9xl font-black text-white tracking-tighter leading-none flex items-baseline drop-shadow-xl">
@@ -511,7 +511,7 @@ function App() {
                             <p className="text-slate-300 text-2xl md:text-3xl font-black">
                               ou R$ 297,00 à vista
                             </p>
-                            <p className="text-brand-green/60 text-sm mt-2 uppercase tracking-[0.3em] font-black">Um ano inteiro de acesso e evolução</p>
+                            <p className="text-brand-green/60 text-sm mt-2 uppercase tracking-[0.3em] font-black">Um ano inteiro de acesso, evolução e resultados reais</p>
                           </div>
                       </div>
 
@@ -519,7 +519,7 @@ function App() {
                          <Zap className="w-8 h-8 md:w-10 md:h-10 fill-black group-hover:scale-125 transition-transform" />
                          Começar minha JORNADA
                       </button>
-                      <p className="mt-10 text-xs text-slate-600 uppercase tracking-[0.4em] font-black">Segurança total no pagamento via InfinitePay</p>
+                      <p className="mt-10 text-xs text-slate-600 uppercase tracking-[0.4em] font-black">Garantia de 7 dias. Pagamento seguro via InfinitePay.</p>
                   </div>
              </div>
         </section>

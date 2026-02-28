@@ -9,27 +9,27 @@ const FAQSection: React.FC = () => {
   const faqs = [
     {
       question: "Tenho garantia se eu não gostar?",
-      answer: "Sim! Você tem 7 dias de garantia incondicional protegida por lei. Se por qualquer motivo você sentir que a Jornada Sprint não é para você, basta solicitar o reembolso e devolvemos 100% do seu investimento, sem perguntas e sem letras miúdas."
+      answer: "Sim. 7 dias de garantia incondicional, protegida por lei. Se em qualquer momento da primeira semana você sentir que a Jornada Sprint não é para você — sem julgamento, sem perguntas — devolvemos 100% do seu investimento. Ponto."
     },
     {
       question: "Como funciona o suporte às aulas?",
-      answer: "Você não estará sozinho. Oferecemos suporte personalizado para tirar todas as suas dúvidas diretamente na plataforma ou no grupo exclusivo. Nossa equipe acompanha seu progresso para garantir que você consiga aplicar o que aprendeu na prática."
+      answer: "Você não vai estar sozinho nessa jornada. Há suporte direto na plataforma e acesso ao grupo exclusivo de corretores onde você tira dúvidas, compartilha resultados e aprende com quem está na mesma caminhada. Nossa equipe acompanha o seu progresso do começo ao fim."
     },
     {
       question: "O conteúdo é atualizado?",
-      answer: "Constantemente. A Inteligência Artificial evolui rápido, e nós também. Sempre que surgirem novas ferramentas, prompts ou estratégias relevantes para o mercado imobiliário, as aulas serão atualizadas e você será notificado imediatamente para não ficar para trás."
+      answer: "Sempre. A IA evolui todo mês — e nós também. Toda vez que surgir uma nova ferramenta, estratégia ou prompt relevante para o mercado imobiliário, o conteúdo é atualizado e você é avisado na hora. Você não vai ficar para trás."
     },
     {
       question: "Por quanto tempo tenho acesso ao curso?",
-      answer: "Você terá acesso total e irrestrito a todo o conteúdo, bônus e atualizações por 12 meses (1 ano). Você pode assistir às aulas quantas vezes quiser, no seu próprio ritmo, pelo computador ou celular."
+      answer: "12 meses de acesso total — aulas, bônus e todas as atualizações. No seu ritmo, quando quiser, quantas vezes precisar. Pelo computador ou pelo celular, sem restrições. O conteúdo é seu por um ano inteiro."
     },
     {
       question: "Preciso saber programação ou tecnologia avançada?",
-      answer: "Absolutamente não. O método Sprint foi desenhado para levar você do zero ao avançado. Se você sabe usar o WhatsApp ou enviar um e-mail, você está apto a dominar as ferramentas de IA que ensinamos."
+      answer: "Não. Zero. Se você sabe usar o WhatsApp, você está pronto para começar. O método Sprint foi criado justamente para quem nunca tocou em IA antes — e quer ir do zero ao avançado sem complicação. A complexidade fica com a gente. Você foca nos resultados."
     },
     {
       question: "Quais são as formas de pagamento?",
-      answer: "Você pode realizar o pagamento via cartão de crédito em até 12x, PIX à vista ou boleto bancário. Todo o processo é processado com segurança total pela InfinitePay."
+      answer: "Cartão de crédito em até 12x de R$ 29,70, PIX à vista por R$ 297,00 ou boleto bancário. Tudo processado com segurança total pela InfinitePay. Você escolhe a forma que faz mais sentido pra você."
     }
   ];
 
@@ -50,7 +50,7 @@ const FAQSection: React.FC = () => {
             Perguntas <span className="text-brand-green">Frequentes</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Tudo o que você precisa saber para entrar na Jornada Sprint com segurança total.
+            As dúvidas que você tem agora — respondidas com honestidade, sem enrolação.
           </p>
         </div>
 
