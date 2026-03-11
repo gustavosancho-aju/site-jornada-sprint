@@ -38,7 +38,7 @@ const ParaQuemESection: React.FC = () => {
 
         {/* ── Headline ── */}
         <div className="reveal text-center mb-12">
-          <h2 className="font-heading text-4xl md:text-6xl font-black uppercase leading-tight tracking-tighter text-black">
+          <h2 className="font-heading text-3xl md:text-6xl font-black uppercase leading-tight tracking-tighter text-black">
             Esta Jornada{' '}
             <span className="relative inline-block mx-2">
               <span className="absolute inset-0 bg-black transform -skew-x-12 shadow-[0_0_20px_rgba(0,0,0,0.3)]" />

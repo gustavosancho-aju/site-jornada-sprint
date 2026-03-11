@@ -302,7 +302,7 @@ function App() {
                 </div>
               </div>
               <div className="order-1 lg:order-2 text-center lg:text-right relative z-10">
-                <h2 className="font-heading text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-[0.8] tracking-tighter text-black select-none drop-shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
+                <h2 className="font-heading text-4xl md:text-6xl lg:text-8xl font-black uppercase leading-[0.8] tracking-tighter text-black select-none drop-shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
                   Para<br/>
                   QUEM<br/>
                   é a<br/>
@@ -475,7 +475,7 @@ function App() {
                       <h2 className="font-heading text-5xl md:text-7xl lg:text-9xl font-black text-black uppercase tracking-tighter mb-4 opacity-10 absolute -top-10 left-1/2 -translate-x-1/2 w-full select-none">
                         OFERTA ÚNICA
                       </h2>
-                      <h2 className="font-heading text-4xl md:text-6xl font-black text-black uppercase tracking-tighter relative z-10 drop-shadow-sm">
+                      <h2 className="font-heading text-3xl md:text-6xl font-black text-black uppercase tracking-tighter relative z-10 drop-shadow-sm">
                         JORNADA <span className="text-white bg-black px-4 py-1 transform -skew-x-12 inline-block">SPRINT</span>
                       </h2>
                       <p className="text-black/80 text-xl font-bold uppercase tracking-[0.2em] mt-6 drop-shadow-sm">O que você está recebendo</p>
@@ -597,8 +597,8 @@ function App() {
                       <div className="flex flex-col items-center justify-center gap-1 mb-12">
                           <p className="text-brand-green font-black text-xl uppercase tracking-widest mb-4 drop-shadow-md">Investimento de Lançamento</p>
                           <div className="flex flex-col md:flex-row items-baseline justify-center gap-x-3">
-                             <span className="text-4xl md:text-5xl font-black text-white/50 uppercase italic">12x de</span>
-                             <div className="text-7xl md:text-9xl font-black text-white tracking-tighter leading-none flex items-baseline drop-shadow-xl">
+                             <span className="text-2xl md:text-5xl font-black text-white/50 uppercase italic">12x de</span>
+                             <div className="text-6xl md:text-9xl font-black text-white tracking-tighter leading-none flex items-baseline drop-shadow-xl">
                                 <span className="text-4xl md:text-5xl mr-2">R$</span>29,70
                              </div>
                           </div>
@@ -610,7 +610,7 @@ function App() {
                           </div>
                       </div>
 
-                      <button onClick={handleCheckout} className="btn-shine w-full bg-brand-green text-black font-black text-2xl md:text-3xl py-8 px-12 rounded-3xl hover:bg-brand-green/90 hover:scale-[1.03] transition-all shadow-[0_0_50px_rgba(34,197,94,0.5)] flex items-center justify-center gap-4 mx-auto group active:scale-95 duration-200 glow-pulse">
+                      <button onClick={handleCheckout} className="btn-shine w-full bg-brand-green text-black font-black text-lg md:text-3xl py-6 md:py-8 px-8 md:px-12 rounded-3xl hover:bg-brand-green/90 hover:scale-[1.03] transition-all shadow-[0_0_50px_rgba(34,197,94,0.5)] flex items-center justify-center gap-4 mx-auto group active:scale-95 duration-200 glow-pulse">
                          <Zap className="w-8 h-8 md:w-10 md:h-10 fill-black group-hover:scale-125 transition-transform" />
                          Começar minha JORNADA
                       </button>
