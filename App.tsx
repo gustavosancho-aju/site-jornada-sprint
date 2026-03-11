@@ -260,7 +260,7 @@ function App() {
               </div>
 
               {/* Hero Stats — 3rd grid child: mobile: below image; desktop: col1/row2 */}
-              <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-sm mx-auto lg:mx-0">
+              <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-sm mx-auto lg:mx-0 lg:col-start-1">
                 <div className="text-center">
                   <div className="text-2xl font-black text-brand-green stat-glow">+200</div>
                   <div className="text-xs text-slate-500 font-bold uppercase tracking-wide mt-1">Profissionais</div>
@@ -270,7 +270,7 @@ function App() {
                   <div className="text-xs text-slate-500 font-bold uppercase tracking-wide mt-1">Meses Acesso</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-black text-brand-green stat-glow">7 dias</div>
+                  <div className="text-2xl font-black text-brand-green stat-glow">7 dias</div>
                   <div className="text-xs text-slate-500 font-bold uppercase tracking-wide mt-1">Garantia</div>
                 </div>
               </div>
