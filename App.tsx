@@ -406,7 +406,7 @@ function App() {
         {/* Resultados Reais */}
         <ResultadosReaisSection />
 
-        <section id="depoimentos" className="relative border-t border-brand-green/10 py-24 md:py-32 overflow-hidden">
+        <section id="depoimentos" className="relative border-t border-brand-green/10 py-24 md:py-32 overflow-hidden overflow-x-hidden">
              <MatrixVideoBackground />
              <div className="absolute inset-y-0 left-0 w-32 md:w-64 bg-gradient-to-r from-black/90 to-transparent z-20 pointer-events-none"></div>
              <div className="absolute inset-y-0 right-0 w-32 md:w-64 bg-gradient-to-l from-black/90 to-transparent z-20 pointer-events-none"></div>
@@ -444,9 +444,10 @@ function App() {
                  </div>
              </div>
 
-             <div 
+             <div
                ref={scrollRef}
                className="flex w-full py-10 overflow-x-auto no-scrollbar scroll-smooth cursor-grab active:cursor-grabbing relative z-20"
+               style={{ touchAction: 'pan-x' }}
                onMouseEnter={() => setIsPaused(true)}
                onMouseLeave={() => setIsPaused(false)}
              >
@@ -584,7 +585,7 @@ function App() {
                     </div>
                   </div>
 
-                  <div id="investimento" className="reveal max-w-3xl mx-auto bg-black/90 backdrop-blur-xl border border-white/10 rounded-[50px] p-10 md:p-20 text-center relative overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
+                  <div id="investimento" className="reveal max-w-3xl mx-auto bg-black/90 backdrop-blur-xl border border-white/10 rounded-[50px] p-6 md:p-20 text-center relative overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
                       <div className="absolute top-0 left-0 w-full h-3 bg-brand-green shadow-[0_0_20px_rgba(34,197,94,0.6)]"></div>
                       <div className="mb-10">
                         <p className="text-slate-500 uppercase tracking-[0.4em] text-sm mb-6 font-black">12 Meses de Transformação Real</p>

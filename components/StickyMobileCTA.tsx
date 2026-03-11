@@ -13,7 +13,7 @@ const StickyMobileCTA: React.FC<StickyMobileCTAProps> = ({ onCheckout }) => {
       const scrollY = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const pct = docHeight > 0 ? scrollY / docHeight : 0;
-      setVisible(pct > 0.15);
+      setVisible(pct > 0.10);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -32,17 +32,17 @@ const StickyMobileCTA: React.FC<StickyMobileCTAProps> = ({ onCheckout }) => {
         {/* Price info */}
         <div className="flex-1 min-w-0">
           <p className="text-white font-black text-sm leading-tight truncate">
-            Jornada Sprint IA
+            <span className="text-brand-green">⚡</span> Vagas Limitadas
           </p>
           <p className="text-brand-green text-xs font-bold">
-            12x de R$29,70 <span className="text-slate-500">• 7 dias de garantia</span>
+            12x de R$29,70 <span className="text-slate-400 font-black">✓ 7 dias</span>
           </p>
         </div>
 
         {/* CTA Button */}
         <button
           onClick={onCheckout}
-          className="flex items-center gap-2 bg-brand-green text-black font-black text-sm px-5 py-3 rounded-xl shrink-0 active:scale-95 transition-transform shadow-[0_0_20px_rgba(34,197,94,0.4)]"
+          className="flex items-center gap-2 bg-brand-green text-black font-black text-sm px-6 py-3.5 rounded-xl shrink-0 active:scale-95 transition-transform shadow-[0_0_20px_rgba(34,197,94,0.4)]"
         >
           <Zap className="w-4 h-4 fill-black" />
           GARANTIR VAGA
