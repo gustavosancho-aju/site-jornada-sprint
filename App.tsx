@@ -3,17 +3,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import MatrixGlitterBackground from './components/MatrixGlitterBackground';
 import SectionMatrixBackground from './components/SectionMatrixBackground';
 import MatrixVideoBackground from './components/MatrixVideoBackground';
-import FAQSection from './components/FAQSection';
 import BenefitItem from './components/BenefitItem';
 import SocialProofBar from './components/SocialProofBar';
-import AutoridadeSection from './components/AutoridadeSection';
-import ParaQuemESection from './components/ParaQuemESection';
-import CurriculoSection from './components/CurriculoSection';
-import ResultadosReaisSection from './components/ResultadosReaisSection';
-import GarantiaSection from './components/GarantiaSection';
-import UrgenciaSection from './components/UrgenciaSection';
 import StickyMobileCTA from './components/StickyMobileCTA';
 import { MessageCircle, CheckCircle, Lock, Award, TrendingUp, Menu, X, Bot, Users, Zap, Quote, Calendar, Target, ShieldCheck, Video, Layout, Sparkles, ArrowRight, Bitcoin, Pause, Play, ChevronLeft, ChevronRight, Cpu, Compass, BrainCircuit, CircuitBoard, Radio } from 'lucide-react';
+
+const FAQSection = React.lazy(() => import('./components/FAQSection'));
+const AutoridadeSection = React.lazy(() => import('./components/AutoridadeSection'));
+const ParaQuemESection = React.lazy(() => import('./components/ParaQuemESection'));
+const CurriculoSection = React.lazy(() => import('./components/CurriculoSection'));
+const ResultadosReaisSection = React.lazy(() => import('./components/ResultadosReaisSection'));
+const GarantiaSection = React.lazy(() => import('./components/GarantiaSection'));
+const UrgenciaSection = React.lazy(() => import('./components/UrgenciaSection'));
 
 const FuturisticIcon = ({ children, className = "" }: { children?: React.ReactNode, className?: string }) => (
   <div className={`relative group ${className}`}>
@@ -372,6 +373,7 @@ function App() {
           </div>
         </section>
 
+        <React.Suspense fallback={<div className="min-h-[200px] bg-black" />}>
         {/* Autoridade */}
         <AutoridadeSection />
 
@@ -628,6 +630,7 @@ function App() {
 
         {/* FAQ Section */}
         <FAQSection />
+        </React.Suspense>
       </main>
 
       <footer className="relative z-10 bg-black/90 py-12 border-t border-brand-green/10 text-center px-4 backdrop-blur-sm">
