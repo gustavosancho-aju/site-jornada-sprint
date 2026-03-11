@@ -37,6 +37,8 @@ const AutoridadeSection: React.FC = () => {
                   src="https://i.postimg.cc/Sx3rF9TR/Gemini-Generated-Image-rb4rhvrb4rhvrb4r-removebg-preview.png"
                   alt="Gustavo Sancho — Especialista em IA para Resultados"
                   className="w-full h-full object-cover object-top scale-110"
+                  fetchPriority="high"
+                  loading="eager"
                 />
               </div>
               {/* Floating badge — now with glow */}

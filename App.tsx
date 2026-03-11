@@ -30,6 +30,7 @@ function App() {
   const [isHeaderSticky, setIsHeaderSticky] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const autoScrollInterval = useRef<number | null>(null);
+  const isPausedRef = useRef(false);
 
   const checkoutUrl = "https://loja.infinitepay.io/gsancho/xal5576-sprint-corretor-haih";
 
@@ -98,26 +99,32 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const startScroll = () => {
-      if (autoScrollInterval.current) return;
-      autoScrollInterval.current = window.setInterval(() => {
-        if (scrollRef.current && !isPaused) {
+    isPausedRef.current = isPaused;
+  }, [isPaused]);
+
+  useEffect(() => {
+    let rafId: number;
+    let lastTime = 0;
+    const INTERVAL_MS = 30;
+
+    const tick = (now: number) => {
+      if (now - lastTime >= INTERVAL_MS) {
+        if (scrollRef.current && !isPausedRef.current) {
           scrollRef.current.scrollLeft += 1;
           const singleSetWidth = scrollRef.current.scrollWidth / 3;
           if (scrollRef.current.scrollLeft >= singleSetWidth * 2) {
-             scrollRef.current.scrollLeft = singleSetWidth;
+            scrollRef.current.scrollLeft = singleSetWidth;
           }
         }
-      }, 30);
+        lastTime = now;
+      }
+      rafId = requestAnimationFrame(tick);
     };
 
-    startScroll();
+    rafId = requestAnimationFrame(tick);
 
-    return () => {
-      if (autoScrollInterval.current) clearInterval(autoScrollInterval.current);
-      autoScrollInterval.current = null;
-    };
-  }, [isPaused]);
+    return () => cancelAnimationFrame(rafId);
+  }, []);
 
   const handleCheckout = () => {
     const width = 500;
@@ -175,31 +182,30 @@ function App() {
             
             <nav className="hidden lg:flex gap-8 text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
               <a href="#hero" className="hover:text-brand-green transition-colors">Início</a>
-              <a href="#problema" className="hover:text-brand-green transition-colors">Problema</a>
-              <a href="#oportunidade" className="hover:text-brand-green transition-colors">Solução</a>
-              <a href="#para-quem" className="hover:text-brand-green transition-colors">Para Quem?</a>
+              <a href="#para-quem-e" className="hover:text-brand-green transition-colors">Para Quem?</a>
+              <a href="#curriculo" className="hover:text-brand-green transition-colors">Jornadas</a>
               <a href="#depoimentos" className="hover:text-brand-green transition-colors">Depoimentos</a>
               <a href="#oferta" className="hover:text-brand-green transition-colors">Oferta</a>
               <a href="#faq" className="hover:text-brand-green transition-colors">Dúvidas</a>
             </nav>
 
             <button onClick={handleCheckout} className="bg-brand-green text-black text-xs font-black uppercase px-6 py-2.5 rounded-full hover:bg-brand-green/80 transition-all shadow-[0_0_15px_rgba(34,197,94,0.4)]">
-              Quero Vender Mais
+              Garantir Minha Vaga
             </button>
           </div>
         </div>
       </header>
 
       <main className="relative z-10">
-        <section id="hero" className="relative min-h-screen flex flex-col overflow-hidden">
+        <section id="hero" className="relative min-h-screen flex flex-col overflow-hidden bg-black">
           <MatrixVideoBackground />
           
-          <div className="flex-1 container mx-auto max-w-7xl px-4 relative z-20 flex items-start pt-24 md:pt-32">
+          <div className="flex-1 container mx-auto max-w-7xl px-4 relative z-20 flex items-start pt-4 md:pt-8">
             <div className="grid lg:grid-cols-2 gap-12 w-full items-center">
               
               <div className="flex flex-col justify-center space-y-8 text-center lg:text-left py-12 lg:py-0">
                 {/* Badge premium */}
-                <div className="reveal reveal-delay-1 flex justify-center lg:justify-start">
+                <div className="flex justify-center lg:justify-start">
                   <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green font-black uppercase tracking-widest text-xs badge-pulse">
                     <span className="w-2 h-2 bg-brand-green rounded-full animate-pulse" />
                     Sprint 003 — Vagas Abertas
@@ -207,24 +213,24 @@ function App() {
                 </div>
 
                 <div className="space-y-2">
-                  <h1 className="reveal reveal-delay-2 font-heading text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.9] uppercase tracking-tight">
+                  <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.9] uppercase tracking-tight">
                     JORNADA
                   </h1>
-                  <h1 className="reveal reveal-delay-3 font-heading text-6xl md:text-8xl lg:text-9xl font-black leading-[0.9] uppercase tracking-tight text-shimmer drop-shadow-[0_0_30px_rgba(34,197,94,0.5)]">
+                  <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl font-black leading-[0.9] uppercase tracking-tight text-shimmer drop-shadow-[0_0_30px_rgba(34,197,94,0.5)]">
                     SPRINT
                   </h1>
                 </div>
 
                 <div className="space-y-6">
-                  <h2 className="reveal reveal-delay-4 text-2xl md:text-4xl text-slate-100 font-bold leading-tight max-w-2xl mx-auto lg:mx-0 drop-shadow-lg">
+                  <h2 className="text-2xl md:text-4xl text-slate-100 font-bold leading-tight max-w-2xl mx-auto lg:mx-0 drop-shadow-lg">
                     Do zero ao domínio da IA — o método que transforma profissionais em geradores de resultado real
                   </h2>
-                  <p className="reveal reveal-delay-5 text-lg md:text-xl text-slate-300 max-w-xl leading-relaxed mx-auto lg:mx-0 font-medium">
+                  <p className="text-lg md:text-xl text-slate-300 max-w-xl leading-relaxed mx-auto lg:mx-0 font-medium">
                     A IA não vai substituir profissionais. Mas vai substituir profissionais que não sabem usá-la. Em 12 meses, você vai ter a ferramenta mais poderosa do mundo trabalhando por você.
                   </p>
                 </div>
 
-                <div className="reveal reveal-delay-6 flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start items-center">
+                <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start items-center">
                   <button onClick={handleStartJourney} className="btn-shine bg-brand-green text-black font-black py-5 px-10 rounded-xl hover:bg-brand-green/90 transition w-full sm:w-auto flex items-center justify-center gap-3 text-xl shadow-[0_0_40px_rgba(34,197,94,0.45)] transform hover:-translate-y-1 active:scale-95 duration-200 uppercase tracking-wider group glow-pulse">
                     <div className="w-8 h-8 rounded-full border-2 border-black flex items-center justify-center group-hover:rotate-90 transition-transform">
                        <Target className="w-5 h-5" />
@@ -234,7 +240,7 @@ function App() {
                 </div>
 
                 {/* Hero Stats — premium */}
-                <div className="reveal grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-sm mx-auto lg:mx-0">
+                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-sm mx-auto lg:mx-0">
                   <div className="text-center">
                     <div className="text-2xl font-black text-brand-green stat-glow">+200</div>
                     <div className="text-xs text-slate-500 font-bold uppercase tracking-wide mt-1">Profissionais</div>
@@ -250,18 +256,20 @@ function App() {
                 </div>
               </div>
 
-              <div className="relative flex justify-center lg:justify-end items-end self-stretch h-full min-h-[50vh] lg:min-h-auto">
+              <div className="relative flex justify-center lg:justify-end items-end self-stretch h-full min-h-[50vh] lg:min-h-auto overflow-hidden">
                 {/* Ambient orbs */}
                 <div className="orb-green absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] h-[70%] pointer-events-none" style={{background: 'radial-gradient(ellipse, rgba(34,197,94,0.18) 0%, transparent 70%)', filter: 'blur(50px)'}}></div>
                 <div className="orb-green absolute top-1/4 right-0 w-48 h-48 pointer-events-none float-slow" style={{background: 'radial-gradient(circle, rgba(34,197,94,0.2) 0%, transparent 70%)', filter: 'blur(40px)', opacity: 0.25}}></div>
                 <div className="orb-green absolute top-1/2 left-0 w-32 h-32 pointer-events-none float-slow-d2" style={{background: 'radial-gradient(circle, rgba(74,222,128,0.15) 0%, transparent 70%)', filter: 'blur(30px)', opacity: 0.2}}></div>
 
-                <div className="relative z-40 w-full max-w-md md:max-w-lg lg:max-w-xl flex items-end overflow-visible reveal-scale">
+                <div className="absolute inset-0 flex items-end justify-center z-40">
                    <img
-                    src="https://i.postimg.cc/Sx3rF9TR/Gemini-Generated-Image-rb4rhvrb4rhvrb4r-removebg-preview.png"
+                    src="https://res.cloudinary.com/dbbpxrebg/image/upload/e_background_removal/e_background_removal/f_webp/cs_srgb/q_auto:best/dpr_1/Generated_Image_March_01_2026_-_4_00PM_kydwnk"
                     alt="Gustavo Sancho IA Specialist"
-                    className="relative z-40 w-full h-auto object-contain block hero-float origin-bottom"
+                    className="h-full w-auto max-w-none object-contain block hero-float origin-bottom"
                     style={{ marginBottom: '-1px' }}
+                    fetchPriority="high"
+                    loading="eager"
                    />
                 </div>
               </div>
@@ -372,10 +380,10 @@ function App() {
         {/* Currículo — 6 Jornadas */}
         <CurriculoSection />
 
-        <section id="para-quem" className="relative py-20 md:py-32 bg-brand-green overflow-hidden">
+        <section id="para-quem" className="relative py-12 md:py-16 bg-brand-green overflow-hidden">
           <SectionMatrixBackground />
           <div className="container mx-auto max-w-4xl text-center px-4 relative z-10">
-            <div className="relative inline-block mb-16">
+            <div className="relative inline-block mb-8">
                <h2 className="relative z-10 font-heading text-4xl md:text-6xl font-black uppercase leading-tight tracking-tighter text-black drop-shadow-sm">
                  Este Caminho <br className="md:hidden" />
                  <span className="relative inline-block mx-3">
@@ -622,7 +630,7 @@ function App() {
 
       <footer className="relative z-10 bg-black/90 py-12 border-t border-brand-green/10 text-center px-4 backdrop-blur-sm">
         <div className="container mx-auto">
-          <p className="text-slate-600 font-black uppercase tracking-[0.5em] text-xs">Sprint Corretor © 2025 • Todos os direitos reservados</p>
+          <p className="text-slate-600 font-black uppercase tracking-[0.5em] text-xs">Jornada Sprint © 2026 • Todos os direitos reservados</p>
           <div className="mt-6 flex justify-center gap-6 text-slate-500">
             <ShieldCheck className="w-6 h-6 opacity-30 hover:opacity-100 transition-opacity cursor-pointer hover:text-brand-green" />
             <Award className="w-6 h-6 opacity-30 hover:opacity-100 transition-opacity cursor-pointer hover:text-brand-green" />

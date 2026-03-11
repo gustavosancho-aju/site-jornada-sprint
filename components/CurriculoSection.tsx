@@ -24,7 +24,7 @@ const jornadas = [
     Icon: Navigation,
     title: 'Navegadores de IA',
     destaque: 'Inteligência de mercado em tempo real',
-    antes: 'Horas pesquisando imóveis sem dados reais, tomando decisão no escuro, sem vantagem competitiva.',
+    antes: 'Horas pesquisando o mercado sem dados reais, tomando decisão no escuro, sem vantagem competitiva sobre a concorrência.',
     depois: 'IA varre o mercado em minutos, entrega dados ocultos da concorrência, você decide com informação real.',
   },
   {
@@ -32,8 +32,8 @@ const jornadas = [
     Icon: Video,
     title: 'Criando Vídeos com IA',
     destaque: 'Produção visual profissional sem custo',
-    antes: 'Sem verba para fotógrafo ou editor. Fotos amadoras que fazem o imóvel parecer menor do que é.',
-    depois: 'Vídeos cinematográficos e imagens que fazem o lead sentir o apartamento antes de entrar — em minutos.',
+    antes: 'Sem verba para produção profissional. Conteúdo amador que não comunica o valor do seu trabalho e da sua marca.',
+    depois: 'Vídeos cinematográficos e imagens que transmitem autoridade — em minutos, sem equipamento caro, sem custo de produção.',
   },
   {
     number: '04',
@@ -70,7 +70,7 @@ const jornadas = [
 ];
 
 const CurriculoSection: React.FC = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0); // Jornada 00 aberta por padrão
 
   return (
     <section id="curriculo" className="relative py-24 md:py-32 overflow-hidden border-t border-brand-green/10">
