@@ -253,7 +253,7 @@ function App() {
 
                 <div className="absolute inset-0 flex items-end justify-center z-40">
                    <img
-                    src="https://res.cloudinary.com/dbbpxrebg/image/upload/e_background_removal/e_background_removal/f_webp/cs_srgb/q_auto:best/dpr_1/Generated_Image_March_01_2026_-_4_00PM_kydwnk"
+                    src="/hero.webp"
                     alt="Gustavo Sancho IA Specialist"
                     className="h-full w-auto max-w-none object-contain block hero-float origin-bottom"
                     style={{ marginBottom: '-1px' }}
