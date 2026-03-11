@@ -104,6 +104,9 @@ function App() {
   }, [isPaused]);
 
   useEffect(() => {
+    // Skip carousel RAF on mobile — no horizontal scroll on small screens
+    if (window.innerWidth < 768) return;
+
     let rafId: number;
     let lastTime = 0;
     const INTERVAL_MS = 30;
