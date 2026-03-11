@@ -19,12 +19,12 @@ const SocialProofBar: React.FC = () => {
     if (!isVisible) return;
     let current = 0;
     const target = 200;
-    const step = target / (1500 / 16);
+    const step = target / (1500 / 50);
     const timer = setInterval(() => {
       current = Math.min(current + step, target);
       setCount(Math.floor(current));
       if (current >= target) clearInterval(timer);
-    }, 16);
+    }, 50);
     return () => clearInterval(timer);
   }, [isVisible]);
 
