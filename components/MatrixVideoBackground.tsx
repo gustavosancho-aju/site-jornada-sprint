@@ -5,6 +5,9 @@ const MatrixVideoBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    // Skip on mobile — saves canvas RAF loop on small screens
+    if (window.innerWidth < 768) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
