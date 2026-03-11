@@ -201,9 +201,9 @@ function App() {
           <MatrixVideoBackground />
           
           <div className="flex-1 container mx-auto max-w-7xl px-4 relative z-20 flex items-start pt-4 md:pt-8">
-            <div className="grid lg:grid-cols-2 gap-12 w-full items-center">
+            <div className="grid lg:grid-cols-2 gap-12 w-full items-start">
               
-              <div className="flex flex-col justify-center space-y-8 text-center lg:text-left py-12 lg:py-0">
+              <div className="flex flex-col justify-center space-y-6 sm:space-y-8 text-center lg:text-left py-6 sm:py-12 lg:py-0">
                 {/* Badge premium */}
                 <div className="flex justify-center lg:justify-start">
                   <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green font-black uppercase tracking-widest text-xs badge-pulse">
@@ -213,19 +213,19 @@ function App() {
                 </div>
 
                 <div className="space-y-2">
-                  <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.9] uppercase tracking-tight">
+                  <h1 className="font-heading text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.9] uppercase tracking-tight">
                     JORNADA
                   </h1>
-                  <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl font-black leading-[0.9] uppercase tracking-tight text-shimmer drop-shadow-[0_0_30px_rgba(34,197,94,0.5)]">
+                  <h1 className="font-heading text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black leading-[0.9] uppercase tracking-tight text-shimmer drop-shadow-[0_0_30px_rgba(34,197,94,0.5)]">
                     SPRINT
                   </h1>
                 </div>
 
                 <div className="space-y-6">
-                  <h2 className="text-2xl md:text-4xl text-slate-100 font-bold leading-tight max-w-2xl mx-auto lg:mx-0 drop-shadow-lg">
+                  <h2 className="text-xl md:text-4xl text-slate-100 font-bold leading-tight max-w-2xl mx-auto lg:mx-0 drop-shadow-lg">
                     Do zero ao domínio da IA — o método que transforma profissionais em geradores de resultado real
                   </h2>
-                  <p className="text-lg md:text-xl text-slate-300 max-w-xl leading-relaxed mx-auto lg:mx-0 font-medium">
+                  <p className="text-base md:text-xl text-slate-300 max-w-xl leading-relaxed mx-auto lg:mx-0 font-medium">
                     A IA não vai substituir profissionais. Mas vai substituir profissionais que não sabem usá-la. Em 12 meses, você vai ter a ferramenta mais poderosa do mundo trabalhando por você.
                   </p>
                 </div>
@@ -239,24 +239,9 @@ function App() {
                   </button>
                 </div>
 
-                {/* Hero Stats — premium */}
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-sm mx-auto lg:mx-0">
-                  <div className="text-center">
-                    <div className="text-2xl font-black text-brand-green stat-glow">+200</div>
-                    <div className="text-xs text-slate-500 font-bold uppercase tracking-wide mt-1">Profissionais</div>
-                  </div>
-                  <div className="text-center border-x border-white/10">
-                    <div className="text-2xl font-black text-brand-green stat-glow">12</div>
-                    <div className="text-xs text-slate-500 font-bold uppercase tracking-wide mt-1">Meses Acesso</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-black text-brand-green stat-glow">7 dias</div>
-                    <div className="text-xs text-slate-500 font-bold uppercase tracking-wide mt-1">Garantia</div>
-                  </div>
-                </div>
               </div>
 
-              <div className="relative flex justify-center lg:justify-end items-end self-stretch h-full min-h-[50vh] lg:min-h-auto overflow-hidden">
+              <div className="relative flex justify-center lg:justify-end items-end self-stretch h-full min-h-[35vh] sm:min-h-[50vh] lg:min-h-auto lg:row-span-2 overflow-hidden">
                 {/* Ambient orbs */}
                 <div className="orb-green absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] h-[70%] pointer-events-none" style={{background: 'radial-gradient(ellipse, rgba(34,197,94,0.18) 0%, transparent 70%)', filter: 'blur(50px)'}}></div>
                 <div className="orb-green absolute top-1/4 right-0 w-48 h-48 pointer-events-none float-slow" style={{background: 'radial-gradient(circle, rgba(34,197,94,0.2) 0%, transparent 70%)', filter: 'blur(40px)', opacity: 0.25}}></div>
@@ -273,9 +258,25 @@ function App() {
                    />
                 </div>
               </div>
+
+              {/* Hero Stats — 3rd grid child: mobile: below image; desktop: col1/row2 */}
+              <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-sm mx-auto lg:mx-0">
+                <div className="text-center">
+                  <div className="text-2xl font-black text-brand-green stat-glow">+200</div>
+                  <div className="text-xs text-slate-500 font-bold uppercase tracking-wide mt-1">Profissionais</div>
+                </div>
+                <div className="text-center border-x border-white/10">
+                  <div className="text-2xl font-black text-brand-green stat-glow">12</div>
+                  <div className="text-xs text-slate-500 font-bold uppercase tracking-wide mt-1">Meses Acesso</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-lg font-black text-brand-green stat-glow">7 dias</div>
+                  <div className="text-xs text-slate-500 font-bold uppercase tracking-wide mt-1">Garantia</div>
+                </div>
+              </div>
             </div>
           </div>
-          
+
           <div className="h-4 bg-brand-green w-full relative z-30 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]"></div>
         </section>
 
