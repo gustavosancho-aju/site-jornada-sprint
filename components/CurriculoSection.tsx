@@ -124,7 +124,7 @@ const CurriculoSection: React.FC = () => {
                   <ChevronDown className={`w-5 h-5 text-slate-500 transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180 text-brand-green' : ''}`} />
                 </button>
 
-                <div className={`transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-56 opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className={`transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                   <div className="px-5 pb-5 grid md:grid-cols-2 gap-4">
                     <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4">
                       <p className="text-red-400 text-xs font-black uppercase tracking-widest mb-2">❌ Antes</p>
