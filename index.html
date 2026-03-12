@@ -11,8 +11,17 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet"></noscript>
     <style>
+      /* Fallback font sized to match Poppins metrics — reduces CLS on font swap */
+      @font-face {
+        font-family: 'Poppins Fallback';
+        src: local('Arial');
+        size-adjust: 107%;
+        ascent-override: 93%;
+        descent-override: 25%;
+        line-gap-override: 0%;
+      }
       body {
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Poppins', 'Poppins Fallback', sans-serif;
         background-color: #000;
       }
       .no-scrollbar::-webkit-scrollbar {
@@ -102,17 +111,19 @@
         content: '';
         position: absolute;
         top: -50%;
-        left: -120%;
+        left: 0;
         width: 55%;
         height: 200%;
         background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
         animation: shine-sweep 3.5s ease-in-out infinite;
         pointer-events: none;
         border-radius: inherit;
+        will-change: transform;
+        transform: translateX(-220%);
       }
       @keyframes shine-sweep {
-        0%       { left: -120%; }
-        40%, 100% { left: 170%; }
+        0%       { transform: translateX(-220%); }
+        40%, 100% { transform: translateX(310%); }
       }
 
       /* --- GLOW PULSE BORDER --- */
@@ -375,20 +386,88 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=940237528439062&ev=PageView&noscript=1"
     /></noscript>
+    <!-- CRITICAL: Hero skeleton renders instantly while React bundle loads -->
+    <!-- Lives OUTSIDE #root so React doesn't destroy it — hidden when React mounts -->
+    <div id="hero-skeleton" style="position:fixed;top:0;left:0;width:100%;z-index:9999;background:#000;color:#fff;font-family:'Poppins',system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;">
+      <!-- Header spacer -->
+      <div style="height:64px;"></div>
+      <!-- Hero content -->
+      <div style="flex:1;display:flex;align-items:flex-start;justify-content:center;padding:1rem;max-width:1280px;margin:0 auto;width:100%;">
+        <div style="display:grid;grid-template-columns:1fr;gap:2rem;width:100%;align-items:start;">
+          <!-- Left col: text -->
+          <div style="display:flex;flex-direction:column;gap:1.5rem;text-align:center;padding:1.5rem 0;">
+            <!-- Badge -->
+            <div style="display:flex;justify-content:center;">
+              <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.375rem 1rem;border-radius:9999px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:#4ade80;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;font-size:0.7rem;">
+                <span style="width:8px;height:8px;background:#22c55e;border-radius:50%;display:inline-block;"></span>
+                Sprint 003 — Vagas Abertas
+              </span>
+            </div>
+            <!-- Title -->
+            <div>
+              <h1 style="font-size:clamp(2.25rem,8vw,6rem);font-weight:900;line-height:0.9;text-transform:uppercase;letter-spacing:-0.025em;margin:0;">JORNADA</h1>
+              <h1 style="font-size:clamp(2.25rem,8vw,6rem);font-weight:900;line-height:0.9;text-transform:uppercase;letter-spacing:-0.025em;margin:0;color:#22c55e;filter:drop-shadow(0 0 30px rgba(34,197,94,0.5));">SPRINT</h1>
+            </div>
+            <!-- Subtitle -->
+            <div style="max-width:640px;margin:0 auto;">
+              <h2 style="font-size:clamp(1.125rem,3vw,2.25rem);color:#f1f5f9;font-weight:700;line-height:1.2;margin:0 0 1rem;">Você sabe que a IA pode mudar seu jogo.<br/>Mas ainda não saiu do lugar.</h2>
+              <p style="font-size:clamp(0.875rem,2vw,1.25rem);color:#cbd5e1;line-height:1.6;margin:0;">Em 12 meses, domine IA do zero ao avançado — com 8 imersões práticas, lives mensais ao vivo e <strong style="color:#22c55e;">1 hora de mentoria individual</strong> com Gustavo para tirar seu projeto do papel.</p>
+            </div>
+            <!-- CTA -->
+            <div style="display:flex;justify-content:center;padding-top:0.5rem;">
+              <a href="https://loja.infinitepay.io/gsancho/xal5576-sprint-corretor-haih" style="display:inline-flex;align-items:center;gap:0.75rem;background:#22c55e;color:#000;font-weight:900;padding:1.25rem 2.5rem;border-radius:0.75rem;text-decoration:none;font-size:1.125rem;text-transform:uppercase;letter-spacing:0.05em;box-shadow:0 0 40px rgba(34,197,94,0.45);">
+                Iniciar minha jornada
+              </a>
+            </div>
+          </div>
+          <!-- Hero image -->
+          <div style="position:relative;display:flex;justify-content:center;align-items:flex-end;min-height:35vh;overflow:hidden;">
+            <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:140%;height:70%;background:radial-gradient(ellipse,rgba(34,197,94,0.18) 0%,transparent 70%);filter:blur(50px);pointer-events:none;"></div>
+            <img src="/hero.webp" alt="Gustavo Sancho IA Specialist" style="height:100%;width:auto;max-width:none;object-fit:contain;position:relative;z-index:10;" fetchpriority="high" width="800" height="1000" />
+          </div>
+          <!-- Stats -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:384px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);">
+            <div style="text-align:center;">
+              <div style="font-size:1.5rem;font-weight:900;color:#22c55e;text-shadow:0 0 20px rgba(34,197,94,0.65);">8</div>
+              <div style="font-size:0.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.25rem;">Imersões</div>
+            </div>
+            <div style="text-align:center;border-left:1px solid rgba(255,255,255,0.1);border-right:1px solid rgba(255,255,255,0.1);">
+              <div style="font-size:1.5rem;font-weight:900;color:#22c55e;text-shadow:0 0 20px rgba(34,197,94,0.65);">1h</div>
+              <div style="font-size:0.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.25rem;">Mentoria 1:1</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:1.5rem;font-weight:900;color:#22c55e;text-shadow:0 0 20px rgba(34,197,94,0.65);">12</div>
+              <div style="font-size:0.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.25rem;">Meses Acesso</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Green bar -->
+      <div style="height:1rem;background:#22c55e;width:100%;box-shadow:0 -10px 30px rgba(0,0,0,0.5);"></div>
+    </div>
+    <!-- END hero skeleton -->
     <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code — deferred to not block rendering -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '940237528439062');
-  fbq('track', 'PageView');
+  // Defer Facebook Pixel until browser is idle
+  function loadFBPixel() {
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '940237528439062');
+    fbq('track', 'PageView');
+  }
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadFBPixel, { timeout: 3500 });
+  } else {
+    setTimeout(loadFBPixel, 3500);
+  }
   </script>
   <!-- End Meta Pixel Code -->
 </body>
