@@ -1,88 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MatrixVideoBackground from './MatrixVideoBackground';
-import { Bot, Navigation, Video, BrainCircuit, Globe, ImageIcon, ChevronDown, Rocket, Code2 } from 'lucide-react';
+import { Plus } from 'lucide-react';
 
 const jornadas = [
-  {
-    number: '00',
-    Icon: Rocket,
-    title: 'IA do Zero',
-    destaque: 'Para quem nunca acessou uma ferramenta de IA',
-    antes: 'Sem saber por onde começar. Ouvindo falar de IA em todo lugar, mas sem coragem de abrir o primeiro prompt.',
-    depois: 'Do zero absoluto ao uso fluente das principais ferramentas de IA — ChatGPT, Gemini, Claude e mais — com confiança total.',
-  },
-  {
-    number: '01',
-    Icon: Bot,
-    title: 'Assistentes de IA',
-    destaque: 'Crie seu Gem ou GPT personalizado',
-    antes: 'Perde tempo em tarefas repetitivas. Sem assistente especializado no próprio negócio.',
-    depois: 'Seu próprio Gem no Gemini ou GPT customizado no ChatGPT — treinado com o seu contexto, trabalhando por você enquanto você foca nos resultados.',
-  },
-  {
-    number: '02',
-    Icon: Navigation,
-    title: 'Navegadores de IA',
-    destaque: 'Inteligência de mercado em tempo real',
-    antes: 'Horas pesquisando o mercado sem dados reais, tomando decisão no escuro, sem vantagem competitiva sobre a concorrência.',
-    depois: 'IA varre o mercado em minutos, entrega dados ocultos da concorrência, você decide com informação real.',
-  },
-  {
-    number: '03',
-    Icon: Video,
-    title: 'Criando Vídeos com IA',
-    destaque: 'Produção visual profissional sem custo',
-    antes: 'Sem verba para produção profissional. Conteúdo amador que não comunica o valor do seu trabalho e da sua marca.',
-    depois: 'Vídeos cinematográficos e imagens que transmitem autoridade — em minutos, sem equipamento caro, sem custo de produção.',
-  },
-  {
-    number: '04',
-    Icon: BrainCircuit,
-    title: 'Especialistas de IA',
-    destaque: 'Produtividade 10x — prompts que convertem',
-    antes: 'Usando IA de forma superficial, sem prompts certos, sem consistência, sem resultado profissional.',
-    depois: 'Domínio avançado de prompts e workflows de IA que multiplicam sua produtividade 10x.',
-  },
-  {
-    number: '05',
-    Icon: Globe,
-    title: 'Criando Sites com IA',
-    destaque: 'Do zero ao online em menos de 2 horas',
-    antes: 'Sem presença digital própria. Dependendo de agência, pagando caro, esperando semanas para qualquer mudança.',
-    depois: 'Site profissional de alta conversão no ar em 2 horas, totalmente seu, sem custo mensal.',
-  },
-  {
-    number: '06',
-    Icon: ImageIcon,
-    title: 'Imagens com IA',
-    destaque: 'Identidade visual única que vende',
-    antes: 'Imagens genéricas sem identidade. Perdendo para concorrentes com material visual profissional.',
-    depois: 'Imagens únicas que constroem sua marca, diferenciam seu trabalho e aumentam percepção de valor imediatamente.',
-  },
-  {
-    number: '07',
-    Icon: Code2,
-    title: 'Criando Sistemas com IA',
-    destaque: 'Nível avançado — sistemas reais com Claude Code',
-    antes: 'Dependendo de desenvolvedores para tudo. Pagando caro por automações simples. Sem autonomia para criar.',
-    depois: 'Criando sistemas funcionais com o Claude Code — automações, ferramentas e soluções que geram valor real. Aula avançada para quem quer ir além.',
-  },
+  { number: '00', title: 'Do Zero com IA', image: '/cards/jornada-00-zero.webp' },
+  { number: '01', title: 'Assistentes de IA', image: '/cards/jornada-01-assistentes.webp' },
+  { number: '02', title: 'Navegadores de IA', image: '/cards/jornada-02-navegadores.webp' },
+  { number: '03', title: 'Vídeos com IA', image: '/cards/jornada-03-videos.webp' },
+  { number: '04', title: 'Especialistas com IA', image: '/cards/jornada-04-especialistas.webp' },
+  { number: '05', title: 'Criando Sites com IA', image: '/cards/jornada-05-sites.webp' },
+  { number: '06', title: 'Imagens com IA', image: '/cards/jornada-06-imagens.webp' },
+  { number: '07', title: 'Sistemas com IA', image: '/cards/jornada-07-sistemas.webp' },
+  { number: '★', title: 'Atendimento Sprint', image: '/cards/atendimento-sprint.webp' },
 ];
 
 const CurriculoSection: React.FC = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0); // Jornada 00 aberta por padrão
-
   return (
     <section id="curriculo" className="relative py-24 md:py-32 overflow-hidden border-t border-brand-green/10">
       <MatrixVideoBackground />
-      <div className="container mx-auto max-w-4xl px-4 relative z-10">
+      <div className="container mx-auto max-w-6xl px-4 relative z-10">
 
         <div className="reveal text-center mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 border border-brand-green/20 text-brand-green font-bold uppercase tracking-widest text-xs mb-6 badge-pulse">
             O que você vai dominar
           </div>
           <h2 className="font-heading text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-tight">
-            8 Jornadas.<br />
+            8 Imersões.<br />
             <span className="text-brand-green">8 Transformações.</span>
           </h2>
           <p className="text-slate-400 mt-6 text-lg max-w-2xl mx-auto">
@@ -90,55 +33,42 @@ const CurriculoSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="space-y-3">
-          {jornadas.map((jornada, i) => {
-            const isOpen = openIndex === i;
-            const delayClass = i < 6 ? `reveal-delay-${i + 1}` : '';
-            return (
-              <div
-                key={i}
-                className={`reveal ${delayClass} border rounded-2xl overflow-hidden transition-colors duration-300 ${
-                  isOpen
-                    ? 'bg-white/5 border-brand-green/40 shadow-[0_0_24px_rgba(34,197,94,0.1)]'
-                    : 'bg-black/40 border-white/10 hover:border-brand-green/25'
-                }`}
-              >
-                <button
-                  onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className="w-full flex items-center gap-4 p-5 text-left focus:outline-none"
-                >
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen ? 'bg-brand-green text-black' : 'bg-black/60 border border-white/10 text-brand-green'}`}>
-                    <jornada.Icon className="w-6 h-6" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-3 flex-wrap">
-                      <span className="text-slate-600 text-xs font-black tracking-widest">JORNADA {jornada.number}</span>
-                      <span className={`font-black text-lg transition-colors ${isOpen ? 'text-brand-green' : 'text-white'}`}>
-                        {jornada.title}
-                      </span>
-                    </div>
-                    {!isOpen && (
-                      <p className="text-slate-500 text-sm mt-0.5 truncate">{jornada.destaque}</p>
-                    )}
-                  </div>
-                  <ChevronDown className={`w-5 h-5 text-slate-500 transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180 text-brand-green' : ''}`} />
-                </button>
+        {/* Card Grid — 5 columns on desktop, 2 on mobile */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          {jornadas.map((jornada, i) => (
+            <div
+              key={i}
+              className="reveal group relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 hover:border-brand-green/40 transition-all duration-300 hover:-translate-y-2 shadow-xl hover:shadow-[0_0_30px_rgba(34,197,94,0.15)]"
+            >
+              <img
+                src={jornada.image}
+                alt={`Jornada ${jornada.number}: ${jornada.title}`}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+              />
+              {/* Subtle overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                <div className={`transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <div className="px-5 pb-5 grid md:grid-cols-2 gap-4">
-                    <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4">
-                      <p className="text-red-400 text-xs font-black uppercase tracking-widest mb-2">❌ Antes</p>
-                      <p className="text-slate-400 text-sm leading-relaxed">{jornada.antes}</p>
-                    </div>
-                    <div className="bg-brand-green/10 border border-brand-green/30 rounded-xl p-4">
-                      <p className="text-brand-green text-xs font-black uppercase tracking-widest mb-2">✓ Depois</p>
-                      <p className="text-slate-300 text-sm leading-relaxed">{jornada.depois}</p>
-                    </div>
-                  </div>
-                </div>
+              {/* Number badge */}
+              <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-sm text-brand-green text-xs font-black px-2 py-1 rounded-lg border border-brand-green/20">
+                {jornada.number}
               </div>
-            );
-          })}
+            </div>
+          ))}
+
+          {/* Mystery Card — "Uma nova aula, todo mês" */}
+          <div className="reveal group relative aspect-[3/4] rounded-2xl overflow-hidden border-2 border-dashed border-brand-green/30 hover:border-brand-green/60 transition-all duration-300 hover:-translate-y-2 bg-brand-green/5 flex flex-col items-center justify-center cursor-default shadow-xl">
+            <div className="w-16 h-16 rounded-2xl bg-brand-green/10 border border-brand-green/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <Plus className="w-8 h-8 text-brand-green" />
+            </div>
+            <p className="text-brand-green font-black text-center text-sm uppercase tracking-wider px-4 leading-tight">
+              Uma nova aula,<br />todo mês
+            </p>
+            <p className="text-slate-600 text-xs font-bold mt-2 uppercase tracking-widest">
+              Lives ao vivo
+            </p>
+          </div>
         </div>
 
         <p className="text-center text-slate-600 font-bold text-sm uppercase tracking-widest mt-10">
