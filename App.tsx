@@ -4,7 +4,7 @@ import MatrixGlitterBackground from './components/MatrixGlitterBackground';
 import SectionMatrixBackground from './components/SectionMatrixBackground';
 import MatrixVideoBackground from './components/MatrixVideoBackground';
 import BenefitItem from './components/BenefitItem';
-import SocialProofBar from './components/SocialProofBar';
+
 import StickyMobileCTA from './components/StickyMobileCTA';
 import { MessageCircle, CheckCircle, Lock, Award, TrendingUp, Menu, X, Bot, Users, Zap, Quote, Calendar, Target, ShieldCheck, Video, Layout, Sparkles, ArrowRight, Bitcoin, Pause, Play, ChevronLeft, ChevronRight, Cpu, Compass, BrainCircuit, CircuitBoard, Radio } from 'lucide-react';
 
@@ -283,9 +283,6 @@ function App() {
 
           <div className="h-4 bg-brand-green w-full relative z-30 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]"></div>
         </section>
-
-        {/* Social Proof Bar */}
-        <SocialProofBar />
 
         <section id="problema" className="relative z-10 py-20 md:py-32 bg-brand-green overflow-hidden">
           <SectionMatrixBackground />
