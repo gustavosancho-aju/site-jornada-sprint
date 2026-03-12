@@ -227,7 +227,7 @@ function App() {
 
                 <div className="space-y-6">
                   <h2 className="text-xl md:text-4xl text-slate-100 font-bold leading-tight max-w-2xl mx-auto lg:mx-0 drop-shadow-lg">
-                    Pare de assistir tutorial de IA. Comece a gerar resultado com ela.
+                    Cansado de assistir tutorial de IA. Aplicações práticas para trazer resultado REAL com IA.
                   </h2>
                   <p className="text-base md:text-xl text-slate-300 max-w-xl leading-relaxed mx-auto lg:mx-0 font-medium">
                     Pare de comprar cursos de IA que ficam obsoletos em 90 dias. A Jornada Sprint IA é um ecossistema com lives mensais ao vivo. Quando a IA muda, seu conteúdo muda junto!
