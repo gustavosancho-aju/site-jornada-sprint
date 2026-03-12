@@ -6,7 +6,9 @@ import MatrixVideoBackground from './components/MatrixVideoBackground';
 import BenefitItem from './components/BenefitItem';
 
 import StickyMobileCTA from './components/StickyMobileCTA';
-import { MessageCircle, CheckCircle, Lock, Award, TrendingUp, Menu, X, Bot, Users, Zap, Quote, Calendar, Target, ShieldCheck, Video, Layout, Sparkles, ArrowRight, Bitcoin, Pause, Play, ChevronLeft, ChevronRight, Cpu, Compass, BrainCircuit, CircuitBoard, Radio } from 'lucide-react';
+import WhatsAppTestimonialsSection from './components/WhatsAppTestimonialsSection';
+import MentoriaSection from './components/MentoriaSection';
+import { MessageCircle, CheckCircle, Lock, Award, TrendingUp, Menu, X, Bot, Users, Zap, Quote, Calendar, Target, ShieldCheck, Video, Layout, Sparkles, ArrowRight, Bitcoin, Pause, Play, ChevronLeft, ChevronRight, Cpu, Compass, BrainCircuit, CircuitBoard, Radio, UserCheck } from 'lucide-react';
 
 const FAQSection = React.lazy(() => import('./components/FAQSection'));
 const AutoridadeSection = React.lazy(() => import('./components/AutoridadeSection'));
@@ -227,10 +229,10 @@ function App() {
 
                 <div className="space-y-6">
                   <h2 className="text-xl md:text-4xl text-slate-100 font-bold leading-tight max-w-2xl mx-auto lg:mx-0 drop-shadow-lg">
-                    Cansado de assistir tutorial de IA. Aplicações práticas para trazer resultado REAL com IA.
+                    Você sabe que a IA pode mudar seu jogo.<br/>Mas ainda não saiu do lugar.
                   </h2>
                   <p className="text-base md:text-xl text-slate-300 max-w-xl leading-relaxed mx-auto lg:mx-0 font-medium">
-                    Pare de comprar cursos de IA que ficam obsoletos em 90 dias. A Jornada Sprint IA é um ecossistema com lives mensais ao vivo. Quando a IA muda, seu conteúdo muda junto!
+                    Em 12 meses, domine IA do zero ao avançado — com 8 imersões práticas, lives mensais ao vivo e <strong className="text-brand-green">1 hora de mentoria individual</strong> com Gustavo para tirar seu projeto do papel.
                   </p>
                 </div>
 
@@ -266,16 +268,16 @@ function App() {
               {/* Hero Stats — 3rd grid child: mobile: below image; desktop: col1/row2 */}
               <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-sm mx-auto lg:mx-0 lg:col-start-1">
                 <div className="text-center">
-                  <div className="text-2xl font-black text-brand-green stat-glow">+200</div>
-                  <div className="text-xs text-slate-500 font-bold uppercase tracking-wide mt-1">Profissionais</div>
+                  <div className="text-2xl font-black text-brand-green stat-glow">8</div>
+                  <div className="text-xs text-slate-500 font-bold uppercase tracking-wide mt-1">Imersões</div>
                 </div>
                 <div className="text-center border-x border-white/10">
-                  <div className="text-2xl font-black text-brand-green stat-glow">12</div>
-                  <div className="text-xs text-slate-500 font-bold uppercase tracking-wide mt-1">Meses Acesso</div>
+                  <div className="text-2xl font-black text-brand-green stat-glow">1h</div>
+                  <div className="text-xs text-slate-500 font-bold uppercase tracking-wide mt-1">Mentoria 1:1</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-black text-brand-green stat-glow">7 dias</div>
-                  <div className="text-xs text-slate-500 font-bold uppercase tracking-wide mt-1">Garantia</div>
+                  <div className="text-2xl font-black text-brand-green stat-glow">12</div>
+                  <div className="text-xs text-slate-500 font-bold uppercase tracking-wide mt-1">Meses Acesso</div>
                 </div>
               </div>
             </div>
@@ -283,6 +285,9 @@ function App() {
 
           <div className="h-4 bg-brand-green w-full relative z-30 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]"></div>
         </section>
+
+        {/* WhatsApp Testimonials — Prova Social Imediata */}
+        <WhatsAppTestimonialsSection />
 
         <section id="problema" className="relative z-10 py-20 md:py-32 bg-brand-green overflow-hidden">
           <SectionMatrixBackground />
@@ -372,6 +377,9 @@ function App() {
             </div>
           </div>
         </section>
+
+        {/* Mentoria 1:1 — Killer Promise */}
+        <MentoriaSection onCheckout={handleCheckout} />
 
         <React.Suspense fallback={<div className="min-h-[200px] bg-black" />}>
         {/* Autoridade */}
@@ -551,6 +559,34 @@ function App() {
                              <span className="text-3xl font-black text-white">Networking Elite</span>
                           </div>
                       </div>
+                  </div>
+
+                  {/* Mentoria 1:1 Bonus Card — full-width */}
+                  <div className="reveal reveal-delay-4 card-3d-hover card-highlight bg-black/90 backdrop-blur-md border-2 border-brand-green/50 p-10 rounded-[40px] flex flex-col hover:shadow-[0_0_40px_rgba(34,197,94,0.25)] transition-all group relative shadow-2xl mb-20">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-green text-black text-sm font-black px-6 py-2 rounded-full z-10 shadow-lg uppercase">
+                      🎁 Bônus Exclusivo
+                    </div>
+                    <div className="flex flex-col md:flex-row items-center gap-8">
+                      <div className="flex-shrink-0">
+                        <div className="w-20 h-20 rounded-3xl bg-brand-green/10 border-2 border-brand-green/30 flex items-center justify-center">
+                          <UserCheck className="w-10 h-10 text-brand-green" />
+                        </div>
+                      </div>
+                      <div className="flex-1 text-center md:text-left">
+                        <h3 className="text-2xl font-black text-brand-green uppercase tracking-tight mb-2">
+                          Mentoria Individual 1:1
+                        </h3>
+                        <p className="text-slate-400 text-base leading-relaxed">
+                          1 hora individual com Gustavo Sancho para tirar seu projeto de IA do papel.
+                          Direcionamento personalizado, no seu contexto, no seu ritmo.
+                        </p>
+                      </div>
+                      <div className="flex-shrink-0 text-center">
+                        <p className="text-slate-600 text-xs font-black uppercase tracking-widest mb-1">Valor separado</p>
+                        <p className="text-slate-500 text-xl font-black line-through">R$ 497</p>
+                        <p className="text-brand-green font-black text-lg">GRÁTIS</p>
+                      </div>
+                    </div>
                   </div>
 
                   {/* ⭐ Lives Mensais — Destaque */}
