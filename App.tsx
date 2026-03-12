@@ -261,6 +261,8 @@ function App() {
                     style={{ marginBottom: '-1px' }}
                     fetchPriority="high"
                     loading="eager"
+                    width={800}
+                    height={1000}
                    />
                 </div>
               </div>
