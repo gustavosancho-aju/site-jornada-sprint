@@ -2,10 +2,21 @@
 <html lang="pt-BR" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jornada Sprint IA</title>
-    <meta name="description" content="Domine IA do zero ao avançado em 12 meses com 8 imersões práticas, lives mensais ao vivo e 1 hora de mentoria individual. Jornada Sprint — seu atalho para dominar Inteligência Artificial." />
+    <title>Jornada Sprint IA — Domine Inteligência Artificial na Prática</title>
+    <meta name="description" content="Aprenda na prática a criar assistentes inteligentes, sites, vídeos e sistemas completos com IA. 8 imersões, 12 meses de acesso e 1h de mentoria individual. Jornada Sprint — seu atalho para dominar IA." />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jornada-sprint.vercel.app/" />
+    <meta property="og:title" content="Jornada Sprint IA — Domine Inteligência Artificial na Prática" />
+    <meta property="og:description" content="8 imersões práticas, 12 meses de acesso, mentoria individual 1:1. Aprenda a criar assistentes, sites, vídeos e sistemas completos com IA." />
+    <meta property="og:image" content="https://jornada-sprint.vercel.app/hero-1200.webp" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jornada Sprint IA — Domine Inteligência Artificial na Prática" />
+    <meta name="twitter:description" content="8 imersões práticas, 12 meses de acesso, mentoria individual 1:1. Aprenda a criar assistentes, sites, vídeos e sistemas completos com IA." />
+    <meta name="twitter:image" content="https://jornada-sprint.vercel.app/hero-1200.webp" />
     <!-- Responsive hero preloads — mobile gets 11KB instead of 740KB -->
     <link rel="preload" as="image" href="/hero-480.webp"  media="(max-width: 767px)"  fetchpriority="high" type="image/webp" />
     <link rel="preload" as="image" href="/hero-768.webp"  media="(min-width: 768px) and (max-width: 1199px)" fetchpriority="high" type="image/webp" />
@@ -19,6 +30,23 @@
     <!-- Non-critical CSS — loaded async (animations, hover effects, reveal) -->
     <link rel="stylesheet" href="/deferred.css" media="print" onload="this.onload=null;this.media='all'">
     <noscript><link rel="stylesheet" href="/deferred.css"></noscript>
+    <!-- Partytown — moves GA4 + Meta Pixel to Web Worker (zero main thread blocking) -->
+    <script>
+      partytown = {
+        lib: '/~partytown/',
+        forward: ['dataLayer.push', 'gtag', 'fbq', 'fbq.push'],
+        resolveUrl: function(url) {
+          var proxied = ['connect.facebook.net', 'www.googletagmanager.com'];
+          if (proxied.indexOf(url.hostname) !== -1) {
+            var proxy = new URL(location.origin + '/api/proxy');
+            proxy.searchParams.set('url', url.href);
+            return proxy;
+          }
+          return url;
+        }
+      };
+    </script>
+    <script src="/~partytown/partytown.js" defer></script>
     <style>
       /* CRITICAL CSS — hero first-paint + Tailwind v4 preflight shield
          Inlining preflight here ensures the hero paints with the SAME
@@ -68,7 +96,7 @@
       <!-- Header spacer -->
       <div style="height:64px;"></div>
       <!-- Hero content -->
-      <div style="flex:1;display:flex;align-items:flex-start;justify-content:center;padding:1rem;max-width:1280px;margin:0 auto;width:100%;position:relative;z-index:20;">
+      <div style="flex:1;display:flex;align-items:flex-start;justify-content:center;padding:1rem;max-width:1152px;margin:0 auto;width:100%;position:relative;z-index:20;">
         <div style="display:grid;grid-template-columns:1fr;gap:2rem;width:100%;align-items:start;">
           <!-- Left col: text -->
           <div style="display:flex;flex-direction:column;gap:1.5rem;text-align:center;padding:1.5rem 0;">
@@ -86,13 +114,13 @@
             </div>
             <!-- Subtitle -->
             <div style="max-width:640px;margin:0 auto;">
-              <h2 style="font-size:clamp(1.125rem,3vw,2.25rem);color:#f1f5f9;font-weight:700;line-height:1.2;margin:0 0 1rem;">Você sabe que a IA pode mudar seu jogo.<br/>Mas ainda não saiu do lugar.</h2>
-              <p style="font-size:clamp(0.875rem,2vw,1.25rem);color:#cbd5e1;line-height:1.6;margin:0;">Em 12 meses, domine IA do zero ao avançado — com 8 imersões práticas, lives mensais ao vivo e <strong style="color:#22c55e;font-weight:700;">1 hora de mentoria individual</strong> com Gustavo para tirar seu projeto do papel.</p>
+              <h2 style="font-size:clamp(1.125rem,3vw,2.25rem);color:#f1f5f9;font-weight:700;line-height:1.2;margin:0 0 1rem;">Você vê a IA mudando tudo ao redor.<br/>E continua fazendo tudo no braço.</h2>
+              <p style="font-size:clamp(0.875rem,2vw,1.25rem);color:#cbd5e1;line-height:1.6;margin:0;">Aprenda na prática a criar assistentes inteligentes, sites de alta conversão, vídeos profissionais e sistemas completos com IA. 8 imersões. 12 meses. <strong style="color:#22c55e;font-weight:700;">1 hora de mentoria individual</strong> para acelerar SEU projeto.</p>
             </div>
             <!-- CTA — links to #investimento, smooth scroll via scroll-smooth on html -->
             <div style="display:flex;justify-content:center;padding-top:0.5rem;">
               <a id="hero-cta" href="#investimento" style="display:inline-flex;align-items:center;gap:0.75rem;background:#22c55e;color:#000;font-weight:900;padding:1.25rem 2.5rem;border-radius:0.75rem;text-decoration:none;font-size:1.125rem;text-transform:uppercase;letter-spacing:0.05em;box-shadow:0 0 40px rgba(34,197,94,0.45);line-height:1.5;">
-                Iniciar minha jornada
+                Garantir Minha Vaga
               </a>
             </div>
           </div>
@@ -101,18 +129,18 @@
                image cannot resize it → eliminates CLS from glow + image.
                contain:layout paint prevents child overflow from affecting
                ancestors (gradient glow is wider than container).          -->
-          <div style="position:relative;display:flex;justify-content:center;align-items:flex-end;aspect-ratio:4/5;max-height:60vh;overflow:hidden;contain:layout paint;">
+          <div style="position:relative;display:flex;justify-content:center;align-items:stretch;aspect-ratio:16/10;max-height:55vh;overflow:hidden;contain:layout paint;margin:0 auto;">
             <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:140%;height:70%;background:radial-gradient(ellipse,rgba(34,197,94,0.18) 0%,transparent 70%);filter:blur(50px);pointer-events:none;will-change:transform;"></div>
             <picture>
               <source srcset="/hero-480.webp"  media="(max-width: 767px)"  type="image/webp" />
               <source srcset="/hero-768.webp"  media="(max-width: 1199px)" type="image/webp" />
-              <img src="/hero-1200.webp" alt="Gustavo Sancho IA Specialist" style="display:block;height:100%;width:auto;max-width:none;object-fit:contain;position:relative;z-index:10;" fetchpriority="high" width="1200" height="670" />
+              <img src="/hero-1200.webp" alt="Gustavo Sancho IA Specialist" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center;position:relative;z-index:10;" fetchpriority="high" width="1200" height="670" />
             </picture>
           </div>
           <!-- Stats -->
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:384px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:640px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);">
             <div style="text-align:center;">
-              <div style="font-size:1.5rem;font-weight:900;color:#22c55e;text-shadow:0 0 20px rgba(34,197,94,0.65);line-height:1.5;">8</div>
+              <div style="font-size:1.5rem;font-weight:900;color:#22c55e;text-shadow:0 0 20px rgba(34,197,94,0.65);line-height:1.5;">+8</div>
               <div style="font-size:0.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.25rem;line-height:1.5;">Imersões</div>
             </div>
             <div style="text-align:center;border-left:1px solid rgba(255,255,255,0.1);border-right:1px solid rgba(255,255,255,0.1);">
@@ -164,9 +192,17 @@
       }
     })();
   </script>
-  <!-- Meta Pixel Code — deferred to not block rendering -->
-  <script>
-  function loadFBPixel() {
+  <!-- GA4 via Partytown Web Worker -->
+  <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-4D2PNNP8F4"></script>
+  <script type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-4D2PNNP8F4');
+  </script>
+  <!-- Meta Pixel via Partytown Web Worker -->
+  <script type="text/partytown">
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -177,13 +213,6 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '940237528439062');
     fbq('track', 'PageView');
-  }
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(loadFBPixel, { timeout: 3500 });
-  } else {
-    setTimeout(loadFBPixel, 3500);
-  }
   </script>
-  <!-- End Meta Pixel Code -->
 </body>
 </html>

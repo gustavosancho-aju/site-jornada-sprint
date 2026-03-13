@@ -118,7 +118,7 @@ const DepoimentosSection = () => {
             Quando a IA vira <span className="text-brand-green">resultado real</span>
           </h2>
         </div>
-        <p className="reveal text-slate-400 mt-6 text-xl max-w-2xl mx-auto font-medium">Essas pessoas chegaram com as mesmas dúvidas que você tem agora. Leia o que mudou.</p>
+        <p className="reveal text-slate-400 mt-6 text-xl max-w-2xl !mx-auto font-medium">Essas pessoas chegaram com as mesmas dúvidas que você tem agora. Leia o que mudou.</p>
 
         <div className="flex items-center justify-center gap-4 mt-8">
           <button

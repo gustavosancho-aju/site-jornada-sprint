@@ -46,18 +46,18 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="relative border-t border-brand-green/10 py-24 px-4 overflow-hidden">
+    <section id="faq" className="relative border-t border-brand-green/10 py-24 overflow-hidden">
       <MatrixVideoBackground />
-      <div className="container mx-auto max-w-4xl relative z-10">
+      <div className="container mx-auto max-w-4xl px-4 relative z-10">
         <div className="text-center mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 border border-brand-green/20 text-brand-green font-bold uppercase tracking-widest text-xs">
             <HelpCircle className="w-4 h-4" />
             Tire suas Dúvidas
           </div>
-          <h2 className="font-heading text-4xl md:text-5xl font-black text-white uppercase tracking-tighter">
+          <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter">
             Perguntas <span className="text-brand-green">Frequentes</span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-400 text-lg md:text-xl max-w-2xl !mx-auto">
             As dúvidas que você tem agora — respondidas com honestidade, sem enrolação.
           </p>
         </div>

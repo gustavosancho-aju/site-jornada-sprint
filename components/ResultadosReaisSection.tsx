@@ -33,17 +33,17 @@ const ResultadosReaisSection: React.FC = () => {
   return (
     <section id="resultados" className="relative py-24 md:py-32 bg-brand-green overflow-hidden">
       <SectionMatrixBackground />
-      <div className="container mx-auto max-w-5xl px-4 relative z-10">
+      <div className="container mx-auto max-w-6xl px-4 relative z-10">
 
-        <div className="reveal text-center mb-14">
-          <h2 className="font-heading text-4xl md:text-6xl font-black uppercase leading-tight tracking-tighter text-black">
+        <div className="reveal flex flex-col items-center text-center mb-14">
+          <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-tight tracking-tighter text-black">
             Resultados{' '}
             <span className="relative inline-block">
               <span className="absolute inset-0 bg-black transform -skew-x-12 shadow-[0_0_20px_rgba(0,0,0,0.3)]" />
               <span className="relative text-brand-green px-4 py-1">Reais</span>
             </span>
           </h2>
-          <p className="text-black/70 mt-6 text-lg font-medium max-w-2xl mx-auto">
+          <p className="text-black/70 mt-6 text-lg md:text-xl font-medium max-w-2xl text-center">
             Não são histórias inventadas. São feedbacks reais de profissionais que passaram pela Jornada Sprint.
           </p>
         </div>

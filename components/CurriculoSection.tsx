@@ -20,15 +20,15 @@ const CurriculoSection: React.FC = () => {
       <MatrixVideoBackground />
       <div className="container mx-auto max-w-6xl px-4 relative z-10">
 
-        <div className="reveal text-center mb-14">
+        <div className="reveal flex flex-col items-center text-center mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 border border-brand-green/20 text-brand-green font-bold uppercase tracking-widest text-xs mb-6 badge-pulse">
             O que você vai dominar
           </div>
-          <h2 className="font-heading text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-tight">
+          <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-tight">
             8 Imersões.<br />
             <span className="text-brand-green">8 Transformações.</span>
           </h2>
-          <p className="text-slate-400 mt-6 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-400 mt-6 text-lg md:text-xl max-w-2xl text-center">
             Cada jornada entrega um resultado concreto. Você não sai com teoria — sai com algo funcionando.
           </p>
         </div>
