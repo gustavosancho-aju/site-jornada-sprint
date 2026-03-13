@@ -67,6 +67,19 @@ function App() {
   ];
 
   useEffect(() => {
+    // 🔥 Meta Pixel: ViewContent ao entrar na página
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'ViewContent', {
+        value: 297.00,
+        currency: 'BRL',
+        content_name: 'Jornada Sprint IA',
+        content_ids: ['jornada-sprint-ia'],
+        content_type: 'product',
+      });
+    }
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPersonaIndex((prev) => (prev + 1) % personas.length);
     }, 3500);
@@ -112,6 +125,16 @@ function App() {
   }, [isPaused]);
 
   const handleCheckout = () => {
+    // 🔥 Meta Pixel: InitiateCheckout
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'InitiateCheckout', {
+        value: 297.00,
+        currency: 'BRL',
+        content_name: 'Jornada Sprint IA',
+        content_ids: ['jornada-sprint-ia'],
+        num_items: 1,
+      });
+    }
     const width = 500;
     const height = 700;
     const left = window.screenX + (window.outerWidth - width) / 2;

@@ -46,5 +46,6 @@ export interface AIStudioGlobal {
 declare global {
   interface Window {
     webkitAudioContext: typeof AudioContext;
+    fbq: (...args: any[]) => void;
   }
 }
