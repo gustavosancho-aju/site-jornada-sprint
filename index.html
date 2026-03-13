@@ -6,13 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jornada Sprint IA</title>
     <meta name="description" content="Domine IA do zero ao avançado em 12 meses com 8 imersões práticas, lives mensais ao vivo e 1 hora de mentoria individual. Jornada Sprint — seu atalho para dominar Inteligência Artificial." />
-    <link rel="preload" as="image" href="/hero.webp" fetchpriority="high" />
+    <!-- Responsive hero preloads — mobile gets 11KB instead of 740KB -->
+    <link rel="preload" as="image" href="/hero-480.webp"  media="(max-width: 767px)"  fetchpriority="high" type="image/webp" />
+    <link rel="preload" as="image" href="/hero-768.webp"  media="(min-width: 768px) and (max-width: 1199px)" fetchpriority="high" type="image/webp" />
+    <link rel="preload" as="image" href="/hero-1200.webp" media="(min-width: 1200px)" fetchpriority="high" type="image/webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet"></noscript>
+    <!-- display=optional → zero CLS guarantee: if font not ready, fallback used forever -->
+    <!-- NO font file preloads — let optional window expire before fonts arrive on slow 4G -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=optional" rel="stylesheet"></noscript>
+    <!-- Non-critical CSS — loaded async (animations, hover effects, reveal) -->
+    <link rel="stylesheet" href="/deferred.css" media="print" onload="this.onload=null;this.media='all'">
+    <noscript><link rel="stylesheet" href="/deferred.css"></noscript>
     <style>
-      /* Fallback font sized to match Poppins metrics — reduces CLS on font swap */
+      /* CRITICAL CSS — hero first-paint + Tailwind v4 preflight shield
+         Inlining preflight here ensures the hero paints with the SAME
+         computed styles that Tailwind will later apply.  When the full
+         CSS bundle arrives (~6-7s on throttled 4G) nothing changes →
+         no style-recalc repaint → LCP stays at FCP (~2.3s).           */
+
+      /* ── Tailwind v4 Preflight (subset that affects hero elements) ── */
+      *, ::before, ::after {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+        border-color: currentColor;
+      }
+      html { line-height: 1.5; -webkit-text-size-adjust: 100%; tab-size: 4; }
+      body { margin: 0; line-height: inherit; }
+      h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
+      a { color: inherit; text-decoration: inherit; }
+      img, video { display: block; max-width: 100%; height: auto; }
+      p, h1, h2, h3, h4, h5, h6 { margin: 0; }
+      *, ::before, ::after, ::backdrop { --tw-ring-offset-width: 0px; }
+
+      /* ── App base ── */
       @font-face {
         font-family: 'Poppins Fallback';
         src: local('Arial');
@@ -25,381 +54,27 @@
         font-family: 'Poppins', 'Poppins Fallback', sans-serif;
         background-color: #000;
       }
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-      .matrix-glow {
-        filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.6));
-      }
-      .scanline-container::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: rgba(34, 197, 94, 0.4);
-        box-shadow: 0 0 15px rgba(34, 197, 94, 0.8);
-        animation: scanline 3s linear infinite;
-        pointer-events: none;
-      }
-
-      /* =========================================
-         PREMIUM VISUAL UPGRADE — JORNADA SPRINT
-         ========================================= */
-
-      /* --- SCROLL REVEAL --- */
-      .reveal {
-        opacity: 0;
-        transform: translateY(44px);
-        transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-                    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .reveal.visible { opacity: 1; transform: translateY(0); }
-      .reveal-left {
-        opacity: 0;
-        transform: translateX(-48px);
-        transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-                    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .reveal-left.visible { opacity: 1; transform: translateX(0); }
-      .reveal-right {
-        opacity: 0;
-        transform: translateX(48px);
-        transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-                    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .reveal-right.visible { opacity: 1; transform: translateX(0); }
-      .reveal-scale {
-        opacity: 0;
-        transform: scale(0.88);
-        transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-                    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .reveal-scale.visible { opacity: 1; transform: scale(1); }
-
-      .reveal-delay-1  { transition-delay: 0.1s !important; }
-      .reveal-delay-2  { transition-delay: 0.2s !important; }
-      .reveal-delay-3  { transition-delay: 0.3s !important; }
-      .reveal-delay-4  { transition-delay: 0.4s !important; }
-      .reveal-delay-5  { transition-delay: 0.5s !important; }
-      .reveal-delay-6  { transition-delay: 0.6s !important; }
-
-      /* --- TEXT SHIMMER --- */
-      .text-shimmer {
-        background: linear-gradient(90deg, #22c55e 0%, #86efac 30%, #22c55e 50%, #4ade80 70%, #22c55e 100%);
-        background-size: 250% auto;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        animation: text-shimmer 3.5s linear infinite;
-      }
-      @keyframes text-shimmer {
-        0%   { background-position: 0% center; }
-        100% { background-position: 250% center; }
-      }
-
-      /* --- BUTTON SHINE SWEEP --- */
-      .btn-shine {
-        position: relative;
-        overflow: hidden;
-      }
-      .btn-shine::after {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: 0;
-        width: 55%;
-        height: 200%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
-        animation: shine-sweep 3.5s ease-in-out infinite;
-        pointer-events: none;
-        border-radius: inherit;
-        will-change: transform;
-        transform: translateX(-220%);
-      }
-      @keyframes shine-sweep {
-        0%       { transform: translateX(-220%); }
-        40%, 100% { transform: translateX(310%); }
-      }
-
-      /* --- GLOW PULSE BORDER --- */
-      .glow-pulse {
-        box-shadow: 0 0 0 1px rgba(34,197,94,0.4), 0 0 24px rgba(34,197,94,0.15);
-        animation: glow-pulse 2.8s ease-in-out infinite;
-      }
-      @keyframes glow-pulse {
-        0%, 100% { box-shadow: 0 0 0 1px rgba(34,197,94,0.35), 0 0 20px rgba(34,197,94,0.1); }
-        50%       { box-shadow: 0 0 0 1px rgba(34,197,94,0.75), 0 0 35px rgba(34,197,94,0.28), 0 0 60px rgba(34,197,94,0.08); }
-      }
-
-      /* --- FLOAT ANIMATIONS --- */
-      .float-slow {
-        animation: float-slow 6.5s ease-in-out infinite;
-      }
-      .float-slow-d2 {
-        animation: float-slow 6.5s ease-in-out 2s infinite;
-      }
-      .float-slow-d4 {
-        animation: float-slow 6.5s ease-in-out 4s infinite;
-      }
-      @keyframes float-slow {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        33%       { transform: translateY(-10px) rotate(2deg); }
-        66%       { transform: translateY(-6px) rotate(-1deg); }
-      }
-
-      .hero-float {
-        animation: hero-float 8s ease-in-out infinite;
-      }
-      @keyframes hero-float {
-        0%, 100% { transform: translateY(0px); }
-        50%       { transform: translateY(-12px); }
-      }
-
-      /* --- 3D CARD HOVER --- */
-      .card-3d-hover {
-        transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
-                    box-shadow 0.45s ease;
-        will-change: transform;
-      }
-      .card-3d-hover:hover {
-        transform: translateY(-12px) rotateX(2.5deg) perspective(800px);
-        box-shadow: 0 32px 64px rgba(0,0,0,0.65), 0 0 40px rgba(34,197,94,0.12);
-      }
-
-      /* --- PREMIUM GLASS CARD --- */
-      .glass-card {
-        background: rgba(0,0,0,0.52);
-        backdrop-filter: blur(24px) saturate(180%);
-        -webkit-backdrop-filter: blur(24px) saturate(180%);
-        border: 1px solid rgba(255,255,255,0.07);
-        box-shadow: 0 8px 32px rgba(0,0,0,0.42),
-                    inset 0 1px 0 rgba(255,255,255,0.06),
-                    inset 0 -1px 0 rgba(0,0,0,0.25);
-      }
-
-      /* --- STAT GLOW (numbers) --- */
-      .stat-glow {
-        text-shadow: 0 0 20px rgba(34,197,94,0.65),
-                     0 0 40px rgba(34,197,94,0.3),
-                     0 0 70px rgba(34,197,94,0.12);
-      }
-
-      /* --- COUNTER PULSE GLOW --- */
-      .counter-glow {
-        animation: counter-glow-anim 2s ease-in-out infinite;
-      }
-      @keyframes counter-glow-anim {
-        0%, 100% { text-shadow: 0 0 12px rgba(34,197,94,0.45); }
-        50%       { text-shadow: 0 0 24px rgba(34,197,94,0.9), 0 0 48px rgba(34,197,94,0.45); }
-      }
-
-      /* --- ANIMATED GRADIENT BORDER --- */
-      .animated-border {
-        position: relative;
-        background-clip: padding-box;
-      }
-      .animated-border::before {
-        content: '';
-        position: absolute;
-        inset: -1px;
-        border-radius: inherit;
-        background: linear-gradient(135deg,
-          rgba(34,197,94,0.7) 0%,
-          transparent 25%,
-          rgba(74,222,128,0.3) 50%,
-          transparent 75%,
-          rgba(34,197,94,0.5) 100%);
-        background-size: 300% 300%;
-        animation: border-rotate 5s ease infinite;
-        z-index: 0;
-      }
-      .animated-border > * { position: relative; z-index: 1; }
-      @keyframes border-rotate {
-        0%   { background-position: 0% 50%; }
-        50%  { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-
-      /* --- CARD TOP HIGHLIGHT (on hover) --- */
-      .card-highlight {
-        position: relative;
-        overflow: hidden;
-      }
-      .card-highlight::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 10%; right: 10%;
-        height: 1.5px;
-        background: linear-gradient(90deg, transparent, rgba(34,197,94,0.9), transparent);
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        pointer-events: none;
-        z-index: 2;
-      }
-      .card-highlight:hover::before { opacity: 1; }
-
-      /* --- FLOATING AMBIENT ORB --- */
-      .orb-green {
-        border-radius: 50%;
-        filter: blur(80px);
-        opacity: 0.18;
-        pointer-events: none;
-        position: absolute;
-        background: radial-gradient(circle, #22c55e 0%, #16a34a 50%, transparent 70%);
-      }
-
-      /* --- BADGE PULSE --- */
-      .badge-pulse {
-        animation: badge-pulse-anim 2.2s ease-in-out infinite;
-      }
-      @keyframes badge-pulse-anim {
-        0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
-        50%       { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
-      }
-
-      /* --- STAGGER REVEAL (apply to parent) --- */
-      .stagger-children > *:nth-child(1) { transition-delay: 0.08s !important; }
-      .stagger-children > *:nth-child(2) { transition-delay: 0.18s !important; }
-      .stagger-children > *:nth-child(3) { transition-delay: 0.28s !important; }
-      .stagger-children > *:nth-child(4) { transition-delay: 0.38s !important; }
-      .stagger-children > *:nth-child(5) { transition-delay: 0.48s !important; }
-      .stagger-children > *:nth-child(6) { transition-delay: 0.58s !important; }
-
-      /* --- DIVIDER GLOW LINE --- */
-      .divider-glow {
-        height: 1px;
-        background: linear-gradient(90deg, transparent 0%, rgba(34,197,94,0.7) 50%, transparent 100%);
-        box-shadow: 0 0 12px rgba(34,197,94,0.5), 0 0 24px rgba(34,197,94,0.2);
-      }
-
-      /* --- COUNTDOWN BLOCK 3D --- */
-      .countdown-3d {
-        position: relative;
-        transform-style: preserve-3d;
-        transition: transform 0.3s ease;
-      }
-      .countdown-3d::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 60%);
-        border-radius: inherit;
-        pointer-events: none;
-      }
-
-      /* --- PREMIUM SCANLINE (stronger) --- */
-      .scanline-premium::after {
-        content: "";
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%;
-        height: 2.5px;
-        background: linear-gradient(90deg, transparent, rgba(34,197,94,0.9), #86efac, rgba(34,197,94,0.9), transparent);
-        box-shadow: 0 0 20px rgba(34,197,94,0.9), 0 0 40px rgba(34,197,94,0.4);
-        animation: scanline 3s linear infinite;
-        pointer-events: none;
-      }
-
-      /* --- ACESSIBILIDADE: prefers-reduced-motion --- */
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-          scroll-behavior: auto !important;
-        }
-        .reveal,
-        .reveal-left,
-        .reveal-right,
-        .reveal-scale {
-          opacity: 1 !important;
-          transform: none !important;
-          transition: none !important;
-        }
-        .hero-float,
-        .float-slow,
-        .float-slow-d2 {
-          animation: none !important;
-        }
-        .text-shimmer {
-          animation: none !important;
-          background: #22c55e !important;
-          -webkit-text-fill-color: #22c55e !important;
-        }
-        .badge-pulse,
-        .glow-pulse,
-        .stat-glow {
-          animation: none !important;
-        }
-      }
-
     </style>
-  <script>
-    // Global Scroll Reveal Observer — activates .reveal* classes
-    (() => {
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      const initReveal = () => {
-        const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-
-        // Se o usuário prefere movimento reduzido, mostra tudo imediatamente
-        if (prefersReducedMotion) {
-          els.forEach(el => el.classList.add('visible'));
-          return;
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(e => {
-            if (e.isIntersecting) {
-              e.target.classList.add('visible');
-            }
-          });
-        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
-        const observe = () => {
-          document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
-            .forEach(el => observer.observe(el));
-        };
-
-        observe();
-        // Re-observe after React renders content
-        setTimeout(observe, 800);
-        setTimeout(observe, 2000);
-      };
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initReveal);
-      } else {
-        initReveal();
-      }
-    })();
-  </script>
   </head>
   <body>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=940237528439062&ev=PageView&noscript=1"
     /></noscript>
-    <!-- CRITICAL: Hero skeleton renders instantly while React bundle loads -->
-    <!-- Lives OUTSIDE #root so React doesn't destroy it — hidden when React mounts -->
-    <div id="hero-skeleton" style="position:fixed;top:0;left:0;width:100%;z-index:9999;background:#000;color:#fff;font-family:'Poppins',system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;">
+    <!-- PERMANENT HERO — renders instantly from HTML, no JS needed -->
+    <!-- Lives OUTSIDE #root so React doesn't touch it -->
+    <div id="hero" style="position:relative;width:100%;background:#000;color:#fff;font-family:'Poppins','Poppins Fallback',sans-serif;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;box-sizing:border-box;line-height:1.5;">
+      <!-- Portal slot for MatrixVideoBackground canvas (injected by React after mount) -->
+      <div id="matrix-bg-portal" style="position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;"></div>
       <!-- Header spacer -->
       <div style="height:64px;"></div>
       <!-- Hero content -->
-      <div style="flex:1;display:flex;align-items:flex-start;justify-content:center;padding:1rem;max-width:1280px;margin:0 auto;width:100%;">
+      <div style="flex:1;display:flex;align-items:flex-start;justify-content:center;padding:1rem;max-width:1280px;margin:0 auto;width:100%;position:relative;z-index:20;">
         <div style="display:grid;grid-template-columns:1fr;gap:2rem;width:100%;align-items:start;">
           <!-- Left col: text -->
           <div style="display:flex;flex-direction:column;gap:1.5rem;text-align:center;padding:1.5rem 0;">
             <!-- Badge -->
             <div style="display:flex;justify-content:center;">
-              <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.375rem 1rem;border-radius:9999px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:#4ade80;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;font-size:0.7rem;">
+              <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.375rem 1rem;border-radius:9999px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:#4ade80;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;font-size:0.7rem;line-height:1.5;">
                 <span style="width:8px;height:8px;background:#22c55e;border-radius:50%;display:inline-block;"></span>
                 Sprint 003 — Vagas Abertas
               </span>
@@ -412,33 +87,41 @@
             <!-- Subtitle -->
             <div style="max-width:640px;margin:0 auto;">
               <h2 style="font-size:clamp(1.125rem,3vw,2.25rem);color:#f1f5f9;font-weight:700;line-height:1.2;margin:0 0 1rem;">Você sabe que a IA pode mudar seu jogo.<br/>Mas ainda não saiu do lugar.</h2>
-              <p style="font-size:clamp(0.875rem,2vw,1.25rem);color:#cbd5e1;line-height:1.6;margin:0;">Em 12 meses, domine IA do zero ao avançado — com 8 imersões práticas, lives mensais ao vivo e <strong style="color:#22c55e;">1 hora de mentoria individual</strong> com Gustavo para tirar seu projeto do papel.</p>
+              <p style="font-size:clamp(0.875rem,2vw,1.25rem);color:#cbd5e1;line-height:1.6;margin:0;">Em 12 meses, domine IA do zero ao avançado — com 8 imersões práticas, lives mensais ao vivo e <strong style="color:#22c55e;font-weight:700;">1 hora de mentoria individual</strong> com Gustavo para tirar seu projeto do papel.</p>
             </div>
-            <!-- CTA -->
+            <!-- CTA — links to #investimento, smooth scroll via scroll-smooth on html -->
             <div style="display:flex;justify-content:center;padding-top:0.5rem;">
-              <a href="https://loja.infinitepay.io/gsancho/xal5576-sprint-corretor-haih" style="display:inline-flex;align-items:center;gap:0.75rem;background:#22c55e;color:#000;font-weight:900;padding:1.25rem 2.5rem;border-radius:0.75rem;text-decoration:none;font-size:1.125rem;text-transform:uppercase;letter-spacing:0.05em;box-shadow:0 0 40px rgba(34,197,94,0.45);">
+              <a id="hero-cta" href="#investimento" style="display:inline-flex;align-items:center;gap:0.75rem;background:#22c55e;color:#000;font-weight:900;padding:1.25rem 2.5rem;border-radius:0.75rem;text-decoration:none;font-size:1.125rem;text-transform:uppercase;letter-spacing:0.05em;box-shadow:0 0 40px rgba(34,197,94,0.45);line-height:1.5;">
                 Iniciar minha jornada
               </a>
             </div>
           </div>
-          <!-- Hero image -->
-          <div style="position:relative;display:flex;justify-content:center;align-items:flex-end;min-height:35vh;overflow:hidden;">
-            <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:140%;height:70%;background:radial-gradient(ellipse,rgba(34,197,94,0.18) 0%,transparent 70%);filter:blur(50px);pointer-events:none;"></div>
-            <img src="/hero.webp" alt="Gustavo Sancho IA Specialist" style="height:100%;width:auto;max-width:none;object-fit:contain;position:relative;z-index:10;" fetchpriority="high" width="800" height="1000" />
+          <!-- Hero image — LCP element, renders from HTML without JS
+               aspect-ratio:4/5 locks the container height so loading the
+               image cannot resize it → eliminates CLS from glow + image.
+               contain:layout paint prevents child overflow from affecting
+               ancestors (gradient glow is wider than container).          -->
+          <div style="position:relative;display:flex;justify-content:center;align-items:flex-end;aspect-ratio:4/5;max-height:60vh;overflow:hidden;contain:layout paint;">
+            <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:140%;height:70%;background:radial-gradient(ellipse,rgba(34,197,94,0.18) 0%,transparent 70%);filter:blur(50px);pointer-events:none;will-change:transform;"></div>
+            <picture>
+              <source srcset="/hero-480.webp"  media="(max-width: 767px)"  type="image/webp" />
+              <source srcset="/hero-768.webp"  media="(max-width: 1199px)" type="image/webp" />
+              <img src="/hero-1200.webp" alt="Gustavo Sancho IA Specialist" style="display:block;height:100%;width:auto;max-width:none;object-fit:contain;position:relative;z-index:10;" fetchpriority="high" width="1200" height="670" />
+            </picture>
           </div>
           <!-- Stats -->
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:384px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);">
             <div style="text-align:center;">
-              <div style="font-size:1.5rem;font-weight:900;color:#22c55e;text-shadow:0 0 20px rgba(34,197,94,0.65);">8</div>
-              <div style="font-size:0.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.25rem;">Imersões</div>
+              <div style="font-size:1.5rem;font-weight:900;color:#22c55e;text-shadow:0 0 20px rgba(34,197,94,0.65);line-height:1.5;">8</div>
+              <div style="font-size:0.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.25rem;line-height:1.5;">Imersões</div>
             </div>
             <div style="text-align:center;border-left:1px solid rgba(255,255,255,0.1);border-right:1px solid rgba(255,255,255,0.1);">
-              <div style="font-size:1.5rem;font-weight:900;color:#22c55e;text-shadow:0 0 20px rgba(34,197,94,0.65);">1h</div>
-              <div style="font-size:0.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.25rem;">Mentoria 1:1</div>
+              <div style="font-size:1.5rem;font-weight:900;color:#22c55e;text-shadow:0 0 20px rgba(34,197,94,0.65);line-height:1.5;">1h</div>
+              <div style="font-size:0.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.25rem;line-height:1.5;">Mentoria 1:1</div>
             </div>
             <div style="text-align:center;">
-              <div style="font-size:1.5rem;font-weight:900;color:#22c55e;text-shadow:0 0 20px rgba(34,197,94,0.65);">12</div>
-              <div style="font-size:0.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.25rem;">Meses Acesso</div>
+              <div style="font-size:1.5rem;font-weight:900;color:#22c55e;text-shadow:0 0 20px rgba(34,197,94,0.65);line-height:1.5;">12</div>
+              <div style="font-size:0.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.25rem;line-height:1.5;">Meses Acesso</div>
             </div>
           </div>
         </div>
@@ -446,12 +129,43 @@
       <!-- Green bar -->
       <div style="height:1rem;background:#22c55e;width:100%;box-shadow:0 -10px 30px rgba(0,0,0,0.5);"></div>
     </div>
-    <!-- END hero skeleton -->
+    <!-- END permanent hero -->
     <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
+  <!-- Scroll Reveal Observer — deferred, not critical for hero -->
+  <script>
+    (() => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const initReveal = () => {
+        const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+        if (prefersReducedMotion) {
+          els.forEach(el => el.classList.add('visible'));
+          return;
+        }
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        const observe = () => {
+          document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
+            .forEach(el => observer.observe(el));
+        };
+        observe();
+        setTimeout(observe, 800);
+        setTimeout(observe, 2000);
+      };
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initReveal);
+      } else {
+        initReveal();
+      }
+    })();
+  </script>
   <!-- Meta Pixel Code — deferred to not block rendering -->
   <script>
-  // Defer Facebook Pixel until browser is idle
   function loadFBPixel() {
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
