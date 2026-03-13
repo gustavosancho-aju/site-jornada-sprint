@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── Brand Colors ─── */
+  --color-brand-green: #22c55e;
+  --color-gray-750: #2d3748;
+  --color-gray-850: #1a202c;
+  --color-gray-950: #0d1117;
+
+  /* ─── Font Families ─── */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  /* ─── Custom Animations ─── */
+  --animate-fade-in: fadeIn 0.5s ease-out forwards;
+  --animate-glitch: glitch 3s infinite;
+  --animate-flicker: flicker 2s infinite;
+  --animate-scanline: scanline 4s linear infinite;
+  --animate-spin-slow: spin 8s linear infinite;
+  --animate-pulse-green: pulseGreen 2s ease-in-out infinite;
+}
+
+/* ─── Keyframes ─── */
+@keyframes fadeIn {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  33%       { transform: translate(-2px, 2px); }
+  66%       { transform: translate(2px, -2px); }
+}
+
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% { opacity: 1; }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999%            { opacity: 0.4; }
+}
+
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes pulseGreen {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}

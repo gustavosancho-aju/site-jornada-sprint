@@ -5,6 +5,9 @@ const MatrixGlitterBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    // Skip on mobile — saves full-screen canvas RAF loop on small screens
+    if (window.innerWidth < 768) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -19,55 +22,68 @@ const MatrixGlitterBackground: React.FC = () => {
     const columns = Math.floor(width / fontSize);
     const drops: number[] = new Array(columns).fill(0).map(() => Math.random() * -100);
 
+    let animId: number;
+    let running = true;
+
     const draw = () => {
-      // Fundo preto com transparência para criar o rastro (trail effect)
+      if (!running) return;
+
       ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
       ctx.fillRect(0, 0, width, height);
 
-      // Configuração da fonte
       ctx.font = `${fontSize}px monospace`;
-      
+
       for (let i = 0; i < drops.length; i++) {
-        // Cor do texto Matrix - Verde Suave (#22c55e é o brand-green) com opacidade
-        // Varia a opacidade levemente para dar profundidade
-        const opacity = Math.random() * 0.5 + 0.1; 
-        ctx.fillStyle = `rgba(34, 197, 94, ${opacity})`; 
-        
+        const opacity = Math.random() * 0.5 + 0.1;
+        ctx.fillStyle = `rgba(34, 197, 94, ${opacity})`;
+
         const text = characters.charAt(Math.floor(Math.random() * characters.length));
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-        // Reinicia a gota aleatoriamente após sair da tela
         if (drops[i] * fontSize > height && Math.random() > 0.975) {
           drops[i] = 0;
         }
-        drops[i] += 0.5; // Velocidade da chuva
+        drops[i] += 0.5;
       }
 
-      requestAnimationFrame(draw);
+      animId = requestAnimationFrame(draw);
     };
 
     const handleResize = () => {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
       const newColumns = Math.floor(width / fontSize);
-      // Ajusta o array de drops se a tela aumentar
       if (newColumns > drops.length) {
-          for(let i = drops.length; i < newColumns; i++) drops.push(Math.random() * -100);
+        for (let i = drops.length; i < newColumns; i++) drops.push(Math.random() * -100);
+      }
+    };
+
+    // Pause loop when tab is hidden, resume when visible
+    const handleVisibility = () => {
+      if (document.hidden) {
+        running = false;
+        cancelAnimationFrame(animId);
+      } else {
+        running = true;
+        animId = requestAnimationFrame(draw);
       }
     };
 
     window.addEventListener('resize', handleResize);
-    const animationId = requestAnimationFrame(draw);
+    document.addEventListener('visibilitychange', handleVisibility);
+    animId = requestAnimationFrame(draw);
 
     return () => {
+      running = false;
+      cancelAnimationFrame(animId);
       window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationId);
+      document.removeEventListener('visibilitychange', handleVisibility);
     };
   }, []);
 
   return (
-    <canvas 
-      ref={canvasRef} 
+    <canvas
+      ref={canvasRef}
       className="fixed inset-0 w-full h-full pointer-events-none z-0"
       style={{ background: '#000000' }}
     />

@@ -13,7 +13,7 @@ const FAQSection: React.FC = () => {
     },
     {
       question: "Como funciona o suporte às aulas?",
-      answer: "Você não vai estar sozinho nessa jornada. Há suporte direto na plataforma e acesso ao grupo exclusivo de corretores onde você tira dúvidas, compartilha resultados e aprende com quem está na mesma caminhada. Nossa equipe acompanha o seu progresso do começo ao fim."
+      answer: "Você não vai estar sozinho nessa jornada. Há suporte direto na plataforma e acesso ao grupo exclusivo de profissionais onde você tira dúvidas, compartilha resultados e aprende com quem está na mesma caminhada. Nossa equipe acompanha o seu progresso do começo ao fim."
     },
     {
       question: "O conteúdo é atualizado?",
@@ -30,6 +30,14 @@ const FAQSection: React.FC = () => {
     {
       question: "Quais são as formas de pagamento?",
       answer: "Cartão de crédito em até 12x de R$ 29,70, PIX à vista por R$ 297,00 ou boleto bancário. Tudo processado com segurança total pela InfinitePay. Você escolhe a forma que faz mais sentido pra você."
+    },
+    {
+      question: "Já tentei outros cursos de IA e não funcionou. Por que esse seria diferente?",
+      answer: "Porque a maioria dos cursos ensina IA de forma genérica — teoria, conceitos, ferramentas isoladas. A Jornada Sprint foi construída para profissionais que querem resultado real. Cada ferramenta, cada prompt, cada fluxo foi testado por profissionais reais, em operações reais, com resultados mensuráveis. Você não aprende sobre IA. Você implementa IA na sua operação, ao vivo, com suporte."
+    },
+    {
+      question: "Funciona para quem trabalha sozinho, sem equipe?",
+      answer: "Especialmente para você. A Jornada Sprint foi desenvolvida pensando no profissional autônomo — aquele que usa chapéus demais, não tem orçamento para agência, editor ou desenvolvedor, e precisa de resultados com o mínimo de complexidade. Ao final, você vai ter ferramentas que trabalham por você enquanto você foca no que importa."
     }
   ];
 
