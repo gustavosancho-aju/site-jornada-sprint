@@ -59,18 +59,27 @@ function App() {
 
   const handleCheckout = () => {
     // Meta Pixel — InitiateCheckout event
-    if (typeof window.fbq === 'function') {
-      window.fbq('track', 'InitiateCheckout', {
-        content_name: 'Jornada Sprint IA',
-        content_category: 'Course',
-        currency: 'BRL',
-        value: 297.00,
-      });
+    // IMPORTANT: with Partytown, window.fbq on the main thread is a forward stub
+    // (proxy → Web Worker), not a native function. The typeof === 'function' check
+    // fails when the stub is an array-queue (before worker init) or a Proxy.
+    // Use a truthy check + try/catch to cover all Partytown lifecycle states.
+    // 500ms delay: gives the worker time to receive the call and send the beacon
+    // before window.location redirect destroys the main-thread context.
+    try {
+      if (window.fbq) {
+        window.fbq('track', 'InitiateCheckout', {
+          content_name: 'Jornada Sprint IA',
+          content_category: 'Course',
+          currency: 'BRL',
+          value: 297.00,
+        });
+      }
+    } catch (_) {
+      // Partytown stub not ready — event lost gracefully, navigation proceeds
     }
-    // Small delay to ensure pixel fires before navigation
     setTimeout(() => {
       window.location.href = checkoutUrl;
-    }, 150);
+    }, 500);
   };
 
   // Portal target for MatrixVideoBackground inside the permanent HTML hero
