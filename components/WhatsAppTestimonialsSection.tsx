@@ -30,7 +30,7 @@ const testimonials = [
 
 const WhatsAppTestimonialsSection: React.FC = () => {
   return (
-    <section className="relative py-16 md:py-24 bg-black border-t border-brand-green/10 overflow-hidden">
+    <section id="testimonials" className="relative py-20 md:py-28 bg-black border-t border-brand-green/10 overflow-hidden">
       <div className="container mx-auto max-w-6xl px-4 relative z-10">
 
         {/* Header */}
@@ -39,7 +39,7 @@ const WhatsAppTestimonialsSection: React.FC = () => {
             <MessageCircle className="w-4 h-4" />
             Direto do WhatsApp
           </div>
-          <h2 className="font-heading text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-tight">
+          <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-tight">
             Não acredite em mim.<br />
             <span className="text-brand-green">Acredite neles.</span>
           </h2>

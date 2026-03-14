@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { BrainCircuit, CheckCircle, CircuitBoard, Radio, UserCheck, Zap } from 'lucide-react';
 import FuturisticIcon from './FuturisticIcon';
 
@@ -8,23 +8,52 @@ interface OfertaSectionProps {
   onCheckout: () => void;
 }
 
-const OfertaSection = ({ onCheckout }: OfertaSectionProps) => (
-  <section id="oferta" className="relative py-24 md:py-32 px-4 overflow-hidden bg-brand-green">
+const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Meta Pixel — ViewContent event when oferta section enters viewport
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (typeof window.fbq === 'function') {
+            window.fbq('track', 'ViewContent', {
+              content_name: 'Jornada Sprint IA — Oferta',
+              content_category: 'Course',
+              currency: 'BRL',
+              value: 297.00,
+            });
+          }
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+  <section ref={sectionRef} id="oferta" className="relative py-24 md:py-32 overflow-hidden bg-brand-green">
     <React.Suspense fallback={null}>
       <SectionMatrixBackground />
     </React.Suspense>
-    <div className="container mx-auto max-w-6xl relative z-10">
+    <div className="container mx-auto max-w-6xl px-4 relative z-10">
       <div className="text-center mb-20">
-        <h2 className="font-heading text-5xl md:text-7xl lg:text-9xl font-black text-black uppercase tracking-tighter mb-4 opacity-10 absolute -top-10 left-1/2 -translate-x-1/2 w-full select-none">
+        <div aria-hidden="true" className="font-heading text-5xl md:text-7xl lg:text-9xl font-black text-black uppercase tracking-tighter mb-4 opacity-10 absolute -top-10 left-1/2 -translate-x-1/2 w-full select-none">
           OFERTA ÚNICA
-        </h2>
-        <h2 className="font-heading text-3xl md:text-6xl font-black text-black uppercase tracking-tighter relative z-10 drop-shadow-sm">
+        </div>
+        <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-black uppercase tracking-tighter relative z-10 drop-shadow-sm">
           JORNADA <span className="text-white bg-black px-4 py-1 transform -skew-x-12 inline-block">SPRINT</span>
         </h2>
-        <p className="text-black/80 text-xl font-bold uppercase tracking-[0.2em] mt-6 drop-shadow-sm">O que você está recebendo</p>
+        <p className="text-black/80 text-lg md:text-xl font-bold uppercase tracking-[0.2em] mt-6 drop-shadow-sm">O que você está recebendo</p>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-8 mb-20">
+      <div className="grid lg:grid-cols-3 gap-8 mb-20 pt-6">
         <div className="reveal reveal-delay-1 card-3d-hover card-highlight bg-black/90 backdrop-blur-md border border-white/10 p-10 rounded-[40px] flex flex-col hover:border-brand-green/40 transition-colors group shadow-2xl">
           <div className="bg-black w-16 h-16 rounded-2xl flex items-center justify-center mb-8 border border-white/5 group-hover:border-brand-green/20 group-hover:text-brand-green transition-all duration-500">
             <FuturisticIcon>
@@ -70,7 +99,7 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => (
           </div>
           <div className="pt-8 border-t border-white/10">
             <span className="text-xs font-black text-slate-600 uppercase tracking-widest block mb-2">Valor Individual</span>
-            <span className="text-4xl font-black text-white">R$ 3.997,00</span>
+            <span className="text-4xl font-black text-white">R$ 997,00</span>
           </div>
         </div>
 
@@ -109,7 +138,7 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => (
               Mentoria Individual 1:1
             </h3>
             <p className="text-slate-400 text-base leading-relaxed">
-              1 hora individual com Gustavo Sancho para tirar seu projeto de IA do papel.
+              Sessão individual gravada para tirar seu projeto de IA do papel.
               Direcionamento personalizado, no seu contexto, no seu ritmo.
             </p>
           </div>
@@ -155,7 +184,7 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => (
         </div>
       </div>
 
-      <div id="investimento" className="reveal max-w-3xl mx-auto bg-black/90 backdrop-blur-xl border border-white/10 rounded-[50px] p-6 md:p-20 text-center relative overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
+      <div id="investimento" className="reveal max-w-3xl mx-auto bg-black/90 backdrop-blur-xl border border-white/10 rounded-[40px] p-6 md:p-20 text-center relative overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
         <div className="absolute top-0 left-0 w-full h-3 bg-brand-green shadow-[0_0_20px_rgba(34,197,94,0.6)]"></div>
         <div className="mb-10">
           <p className="text-slate-500 uppercase tracking-[0.4em] text-sm mb-6 font-black">12 Meses de Transformação Real</p>
@@ -174,21 +203,22 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => (
             </div>
           </div>
           <div className="mt-8 p-6 bg-black/40 rounded-3xl border border-white/5 shadow-inner w-full">
-            <p className="text-slate-300 text-2xl md:text-3xl font-black">
+            <p className="text-slate-300 text-xl md:text-2xl font-black">
               ou R$ 297,00 à vista
             </p>
             <p className="text-brand-green/60 text-sm mt-2 uppercase tracking-[0.3em] font-black">Um ano inteiro de acesso, evolução e resultados reais</p>
           </div>
         </div>
 
-        <button onClick={onCheckout} className="btn-shine w-full bg-brand-green text-black font-black text-lg md:text-3xl py-6 md:py-8 px-8 md:px-12 rounded-3xl hover:bg-brand-green/90 hover:scale-[1.03] transition-all shadow-[0_0_50px_rgba(34,197,94,0.5)] flex items-center justify-center gap-4 mx-auto group active:scale-95 duration-200 glow-pulse">
+        <button onClick={onCheckout} className="btn-shine w-full bg-brand-green text-black font-black text-lg md:text-xl py-6 md:py-8 px-8 md:px-12 rounded-3xl hover:bg-brand-green/90 hover:scale-[1.03] transition-all shadow-[0_0_50px_rgba(34,197,94,0.5)] flex items-center justify-center gap-4 mx-auto group active:scale-95 duration-200 glow-pulse">
           <Zap className="w-8 h-8 md:w-10 md:h-10 fill-black group-hover:scale-125 transition-transform" />
-          Começar minha JORNADA
+          Garantir Minha Vaga
         </button>
         <p className="mt-10 text-xs text-slate-600 uppercase tracking-[0.4em] font-black">Garantia de 7 dias. Pagamento seguro via InfinitePay.</p>
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default OfertaSection;

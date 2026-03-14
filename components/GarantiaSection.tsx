@@ -26,7 +26,7 @@ const GarantiaSection: React.FC<GarantiaSectionProps> = ({ onCheckout }) => {
 
             {/* Headline */}
             <div>
-              <h2 className="font-heading text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-2">
+              <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-2">
                 Garantia <span className="text-brand-green">Incondicional</span>
               </h2>
               <p className="text-brand-green font-black uppercase tracking-widest text-sm">
@@ -65,7 +65,7 @@ const GarantiaSection: React.FC<GarantiaSectionProps> = ({ onCheckout }) => {
               onClick={onCheckout}
               className="flex items-center gap-3 bg-brand-green text-black font-black text-lg px-10 py-5 rounded-2xl hover:bg-brand-green/90 transition-all shadow-[0_0_30px_rgba(34,197,94,0.3)] hover:shadow-[0_0_50px_rgba(34,197,94,0.5)] hover:-translate-y-1 active:scale-95 group"
             >
-              Começar Sem Risco
+              Garantir Minha Vaga
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </button>
 

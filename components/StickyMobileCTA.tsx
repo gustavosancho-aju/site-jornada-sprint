@@ -45,7 +45,7 @@ const StickyMobileCTA: React.FC<StickyMobileCTAProps> = ({ onCheckout }) => {
           className="flex items-center gap-2 bg-brand-green text-black font-black text-sm px-6 py-3.5 rounded-xl shrink-0 active:scale-95 transition-transform shadow-[0_0_20px_rgba(34,197,94,0.4)]"
         >
           <Zap className="w-4 h-4 fill-black" />
-          GARANTIR VAGA
+          GARANTIR MINHA VAGA
         </button>
       </div>
 

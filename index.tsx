@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+// CSS moved to App.tsx so it loads AFTER hero paint (non-render-blocking)
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -9,22 +8,23 @@ if (!rootElement) {
 }
 
 const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// Hide the fixed-position hero skeleton once React has painted
+// Start downloading App chunk immediately (in parallel with hero.webp)
+// but DON'T execute React render yet — let the browser paint the hero first.
+const appPromise = import('./App');
+
+// Paint break: two rAF frames guarantee the browser has rendered
+// the permanent HTML hero. Only THEN mount the React app.
+// This makes the hero.webp paint (~2-3s) the final LCP
+// instead of waiting for React hydration (7+ s).
 requestAnimationFrame(() => {
   requestAnimationFrame(() => {
-    const skeleton = document.getElementById('hero-skeleton');
-    if (skeleton) {
-      skeleton.style.transition = 'opacity 0.3s ease-out';
-      skeleton.style.opacity = '0';
-      skeleton.addEventListener('transitionend', () => {
-        skeleton.style.display = 'none';
-      }, { once: true });
-    }
+    appPromise.then(({ default: App }) => {
+      root.render(
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      );
+    });
   });
 });

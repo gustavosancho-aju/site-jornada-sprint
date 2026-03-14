@@ -7,9 +7,6 @@ interface UrgenciaSectionProps {
 }
 
 const UrgenciaSection: React.FC<UrgenciaSectionProps> = ({ onCheckout }) => {
-
-
-
   return (
     <section id="urgencia" className="relative py-24 md:py-32 bg-brand-green overflow-hidden">
       <SectionMatrixBackground />
@@ -21,11 +18,11 @@ const UrgenciaSection: React.FC<UrgenciaSectionProps> = ({ onCheckout }) => {
           Sprint 003 — Preço de Lançamento
         </div>
 
-        <h2 className="font-heading text-4xl md:text-6xl font-black uppercase tracking-tighter text-black leading-tight mb-4">
+        <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-black leading-tight mb-4">
           Preço de Lançamento
         </h2>
 
-        <p className="text-black/60 text-lg font-medium mb-10">
+        <p className="text-black/60 text-lg md:text-xl font-medium mb-10">
           Invista em um ecossistema que evolui com a IA
         </p>
 
@@ -33,7 +30,7 @@ const UrgenciaSection: React.FC<UrgenciaSectionProps> = ({ onCheckout }) => {
         <div className="reveal animated-border bg-black/20 rounded-3xl p-6 md:p-8 mb-10 max-w-md mx-auto">
           <div className="flex items-center justify-between mb-3">
             <span className="text-black/60 font-bold">Preço normal:</span>
-            <span className="text-black/40 font-black text-xl line-through">R$ 597,00</span>
+            <span className="text-black/40 font-black text-xl line-through">R$ 997,00</span>
           </div>
           <div className="flex items-center justify-between">
             <span className="text-black font-black text-lg">Agora:</span>
@@ -53,9 +50,6 @@ const UrgenciaSection: React.FC<UrgenciaSectionProps> = ({ onCheckout }) => {
           Garantir Minha Vaga
           <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
         </button>
-
-
-
       </div>
     </section>
   );

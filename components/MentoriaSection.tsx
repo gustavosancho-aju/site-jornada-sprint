@@ -8,9 +8,9 @@ interface MentoriaSectionProps {
 
 const MentoriaSection: React.FC<MentoriaSectionProps> = ({ onCheckout }) => {
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden border-t border-brand-green/10">
+    <section id="mentoria" className="relative py-20 md:py-28 overflow-hidden border-t border-brand-green/10">
       <MatrixVideoBackground />
-      <div className="container mx-auto max-w-5xl px-4 relative z-10">
+      <div className="container mx-auto max-w-6xl px-4 relative z-10">
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left — Content */}
@@ -20,12 +20,12 @@ const MentoriaSection: React.FC<MentoriaSectionProps> = ({ onCheckout }) => {
               Bônus exclusivo
             </div>
 
-            <h2 className="font-heading text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-tight">
-              1 hora <span className="text-brand-green">individual</span><br />
-              com Gustavo
+            <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-tight">
+              Sessão <span className="text-brand-green">individual</span><br />
+              gravada
             </h2>
 
-            <p className="text-slate-300 text-lg leading-relaxed">
+            <p className="text-slate-300 text-lg md:text-xl leading-relaxed">
               Você não vai ficar sozinho. Ao entrar na Jornada Sprint, ganha
               <strong className="text-white"> 1 hora de mentoria individual</strong> para
               tirar seu projeto de IA do papel — com direcionamento personalizado,
@@ -34,7 +34,7 @@ const MentoriaSection: React.FC<MentoriaSectionProps> = ({ onCheckout }) => {
 
             <div className="space-y-4">
               {[
-                { icon: UserCheck, text: 'Sessão 1:1 — só você e Gustavo' },
+                { icon: UserCheck, text: 'Sessão 1:1 — sessão individual gravada' },
                 { icon: Target, text: 'Foco no SEU projeto — não é aula genérica' },
                 { icon: Clock, text: '1 hora completa de direcionamento prático' },
               ].map(({ icon: Icon, text }, i) => (
@@ -60,8 +60,8 @@ const MentoriaSection: React.FC<MentoriaSectionProps> = ({ onCheckout }) => {
               </div>
 
               <h3 className="text-2xl font-black text-white mb-2">Mentoria 1:1</h3>
-              <p className="text-brand-green font-black text-4xl mb-2">1 HORA</p>
-              <p className="text-slate-400 text-sm">Individual com Gustavo Sancho</p>
+              <p className="text-brand-green font-black text-3xl mb-2">1 HORA</p>
+              <p className="text-slate-400 text-sm">Sessão individual gravada</p>
 
               <div className="mt-6 pt-6 border-t border-white/10">
                 <p className="text-slate-600 text-xs uppercase tracking-widest font-bold mb-1">Se fosse cobrada separadamente</p>
