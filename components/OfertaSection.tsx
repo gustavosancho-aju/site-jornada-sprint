@@ -133,7 +133,7 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
               <UserCheck className="w-10 h-10 text-brand-green" />
             </div>
           </div>
-          <div className="flex-1 text-center md:text-left">
+          <div className="flex-1 min-w-0 text-center md:text-left">
             <h3 className="text-2xl font-black text-brand-green uppercase tracking-tight mb-2">
               Mentoria Individual 1:1
             </h3>
