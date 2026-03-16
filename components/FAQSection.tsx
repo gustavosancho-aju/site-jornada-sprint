@@ -46,7 +46,7 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="relative border-t border-brand-green/10 py-24 overflow-hidden">
+    <section id="faq" className="relative border-t border-brand-green/10 py-12 md:py-16 overflow-hidden">
       <MatrixVideoBackground />
       <div className="container mx-auto max-w-4xl px-4 relative z-10">
         <div className="text-center mb-16 space-y-4">

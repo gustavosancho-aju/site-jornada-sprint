@@ -31,7 +31,7 @@ const qualifications = [
 
 const ParaQuemESection: React.FC = () => {
   return (
-    <section id="para-quem-e" className="relative py-20 md:py-32 bg-brand-green overflow-hidden">
+    <section id="para-quem-e" className="relative py-12 md:py-16 bg-brand-green overflow-hidden">
       <SectionMatrixBackground />
 
       <div className="container mx-auto max-w-6xl px-4 relative z-10">

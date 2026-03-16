@@ -151,11 +151,11 @@ function App() {
           {/* Autoridade — Credibilidade */}
           <AutoridadeSection />
 
-          {/* WhatsApp Testimonials — Prova Social */}
-          <WhatsAppTestimonialsSection />
-
-          {/* Resultados Reais — Screenshots */}
+          {/* Resultados Reais — Credibilidade rápida */}
           <ResultadosReaisSection />
+
+          {/* WhatsApp Testimonials — Autenticidade */}
+          <WhatsAppTestimonialsSection />
 
           {/* Este Caminho NÃO é para... — Filtro */}
           <NaoEParaSection />

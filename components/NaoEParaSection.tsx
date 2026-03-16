@@ -21,7 +21,7 @@ const NaoEParaSection = () => {
   }, []);
 
   return (
-    <section id="naoepara" className="relative py-20 md:py-28 bg-brand-green overflow-hidden">
+    <section id="naoepara" className="relative py-12 md:py-16 bg-brand-green overflow-hidden">
       <React.Suspense fallback={null}>
         <SectionMatrixBackground />
       </React.Suspense>

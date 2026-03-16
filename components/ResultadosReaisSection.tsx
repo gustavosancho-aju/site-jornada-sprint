@@ -31,7 +31,7 @@ const casos = [
 
 const ResultadosReaisSection: React.FC = () => {
   return (
-    <section id="resultados" className="relative py-24 md:py-32 bg-brand-green overflow-hidden">
+    <section id="resultados" className="relative py-12 md:py-16 bg-brand-green overflow-hidden">
       <SectionMatrixBackground />
       <div className="container mx-auto max-w-6xl px-4 relative z-10">
 

@@ -4,7 +4,7 @@ import { ArrowDown } from 'lucide-react';
 const MatrixVideoBackground = React.lazy(() => import('./MatrixVideoBackground'));
 
 const OportunidadeSection = () => (
-  <section id="oportunidade" className="relative py-20 md:py-32 overflow-hidden border-t border-brand-green/10">
+  <section id="oportunidade" className="relative py-12 md:py-16 overflow-hidden border-t border-brand-green/10">
     <React.Suspense fallback={null}>
       <MatrixVideoBackground />
     </React.Suspense>

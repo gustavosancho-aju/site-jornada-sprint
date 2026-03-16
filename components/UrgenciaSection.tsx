@@ -8,7 +8,7 @@ interface UrgenciaSectionProps {
 
 const UrgenciaSection: React.FC<UrgenciaSectionProps> = ({ onCheckout }) => {
   return (
-    <section id="urgencia" className="relative py-24 md:py-32 bg-brand-green overflow-hidden">
+    <section id="urgencia" className="relative py-12 md:py-16 bg-brand-green overflow-hidden">
       <SectionMatrixBackground />
       <div className="container mx-auto max-w-4xl px-4 relative z-10 text-center">
 

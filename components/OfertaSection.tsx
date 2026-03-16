@@ -38,7 +38,7 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
   }, []);
 
   return (
-  <section ref={sectionRef} id="oferta" className="relative py-24 md:py-32 overflow-hidden bg-brand-green">
+  <section ref={sectionRef} id="oferta" className="relative py-12 md:py-16 overflow-hidden bg-brand-green">
     <React.Suspense fallback={null}>
       <SectionMatrixBackground />
     </React.Suspense>
@@ -196,18 +196,14 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
 
         <div className="flex flex-col items-center justify-center gap-1 mb-12">
           <p className="text-brand-green font-black text-xl uppercase tracking-widest mb-4 drop-shadow-md">Investimento de Lançamento</p>
-          <div className="flex flex-col md:flex-row items-baseline justify-center gap-x-3">
-            <span className="text-2xl md:text-5xl font-black text-white/50 uppercase italic">12x de</span>
-            <div className="text-6xl md:text-9xl font-black text-white tracking-tighter leading-none flex items-baseline drop-shadow-xl">
-              <span className="text-4xl md:text-5xl mr-2">R$</span>29,70
+          <div className="flex flex-col items-center justify-center gap-0">
+            <span className="text-xl md:text-3xl font-black text-white/40 uppercase italic tracking-widest">12x de</span>
+            <div className="text-7xl md:text-[10rem] font-black text-brand-green tracking-tighter leading-none flex items-baseline drop-shadow-xl">
+              <span className="text-4xl md:text-6xl mr-2">R$</span>29,70
             </div>
           </div>
-          <div className="mt-8 p-6 bg-black/40 rounded-3xl border border-white/5 shadow-inner w-full">
-            <p className="text-slate-300 text-xl md:text-2xl font-black">
-              ou R$ 297,00 à vista
-            </p>
-            <p className="text-brand-green/60 text-sm mt-2 uppercase tracking-[0.3em] font-black">Um ano inteiro de acesso, evolução e resultados reais</p>
-          </div>
+          <p className="mt-4 text-slate-500 text-sm md:text-base font-bold">ou R$ 297,00 à vista</p>
+          <p className="text-brand-green/50 text-xs mt-1 uppercase tracking-[0.3em] font-black">Um ano inteiro de acesso, evolução e resultados reais</p>
         </div>
 
         <button onClick={onCheckout} className="btn-shine w-full bg-brand-green text-black font-black text-lg md:text-xl py-6 md:py-8 px-8 md:px-12 rounded-3xl hover:bg-brand-green/90 hover:scale-[1.03] transition-all shadow-[0_0_50px_rgba(34,197,94,0.5)] flex items-center justify-center gap-4 mx-auto group active:scale-95 duration-200 glow-pulse">

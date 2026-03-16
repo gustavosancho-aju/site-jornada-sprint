@@ -7,7 +7,7 @@ interface GarantiaSectionProps {
 
 const GarantiaSection: React.FC<GarantiaSectionProps> = ({ onCheckout }) => {
   return (
-    <section id="garantia" className="relative py-20 md:py-28 bg-black border-t border-brand-green/10">
+    <section id="garantia" className="relative py-12 md:py-16 bg-black border-t border-brand-green/10">
       <div className="container mx-auto max-w-4xl px-4">
         <div className="reveal relative bg-gradient-to-br from-brand-green/8 via-transparent to-transparent border-2 border-brand-green/30 rounded-[48px] p-10 md:p-16 text-center overflow-hidden shadow-[0_0_80px_rgba(34,197,94,0.1)] glow-pulse">
 

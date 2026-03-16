@@ -30,7 +30,7 @@ const testimonials = [
 
 const WhatsAppTestimonialsSection: React.FC = () => {
   return (
-    <section id="testimonials" className="relative py-20 md:py-28 bg-black border-t border-brand-green/10 overflow-hidden">
+    <section id="testimonials" className="relative py-12 md:py-16 bg-black border-t border-brand-green/10 overflow-hidden">
       <div className="container mx-auto max-w-6xl px-4 relative z-10">
 
         {/* Header */}
