@@ -19,8 +19,8 @@ const ProblemaSection = () => (
       {/* Cards — stacked below */}
       <div className="grid md:grid-cols-3 gap-6 relative z-10">
         <div className="reveal reveal-delay-1 card-3d-hover card-highlight bg-black/90 p-8 rounded-2xl text-white shadow-xl border border-white/10 hover:border-brand-green/50 transition-colors duration-300 group">
-          <h3 className="font-bold text-xl md:text-2xl mb-3 group-hover:text-brand-green transition-colors leading-tight">Você ainda responde cada mensagem <span className="text-brand-green underline decoration-brand-green/30">no braço</span> — quando poderia ter um assistente que atende, qualifica e responde por você.</h3>
-          <p className="text-slate-400 leading-relaxed text-base md:text-lg">Você vai criar seu próprio GPT customizado ou Gem no Gemini — treinado com o seu contexto, atendendo, qualificando e respondendo por você. Enquanto você dorme, ele trabalha. Não é ficção. É a Jornada 01 do Sprint.</p>
+          <h3 className="font-bold text-xl md:text-2xl mb-3 group-hover:text-brand-green transition-colors leading-tight">Você perde horas com <span className="text-brand-green underline decoration-brand-green/30">tarefas repetitivas</span> — e-mails, follow-ups, relatórios — que uma automação faria sozinha, 24h por dia.</h3>
+          <p className="text-slate-400 leading-relaxed text-base md:text-lg">Você vai montar agentes e GPTs com ações que executam o trabalho repetitivo por você: triagem de e-mail, relatórios automáticos, atendimento no WhatsApp. Enquanto você dorme, a automação trabalha. Não é ficção — é o coração da Jornada Sprint.</p>
         </div>
         <div className="reveal reveal-delay-2 card-3d-hover card-highlight bg-black/90 p-8 rounded-2xl text-white shadow-xl border border-white/10 hover:border-brand-green/50 transition-colors duration-300 group">
           <h3 className="font-bold text-xl md:text-2xl mb-3 group-hover:text-brand-green transition-colors leading-tight">Sua <span className="text-brand-green underline decoration-brand-green/30">imagem digital</span> decide se confiam em você antes do primeiro contato — e hoje ela está te deixando na média.</h3>

@@ -28,6 +28,10 @@ const FAQSection: React.FC = () => {
       answer: "Não. Zero. Se você sabe usar o WhatsApp, você está pronto para começar. O método Sprint foi criado justamente para quem nunca tocou em IA antes — e quer ir do zero ao avançado sem complicação. A complexidade fica com a gente. Você foca nos resultados."
     },
     {
+      question: "Preciso saber programar para criar automações?",
+      answer: "Não. Tudo é feito com agentes e GPTs com ações — você descreve o que quer automatizar em linguagem natural e a IA executa. Sem código, sem plataforma complicada. Você vai montar, ao vivo, automações reais para e-mail, relatórios, atendimento no WhatsApp e captação de leads. A complexidade fica com a gente; você fica com o tempo livre."
+    },
+    {
       question: "R$ 497 é caro?",
       answer: "Depende com o que você compara. Uma única peça desse ecossistema vale mais que isso: as imersões sozinhas valem R$ 1.497, o Hub de Soluções R$ 997, e a mentoria individual 1:1 sairia R$ 2.500. Você leva tudo — mais 12 meses de acesso, lives mensais e atualizações — por R$ 497. É menos que um mês de agência, editor ou desenvolvedor. A pergunta certa não é 'é caro?', é 'quanto custa continuar fazendo tudo no braço por mais um ano?'."
     },
