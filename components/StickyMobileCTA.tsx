@@ -35,7 +35,7 @@ const StickyMobileCTA: React.FC<StickyMobileCTAProps> = ({ onCheckout }) => {
             <span className="text-brand-green">⚡</span> Vagas Limitadas
           </p>
           <p className="text-brand-green text-xs font-bold">
-            12x de R$29,70 <span className="text-slate-400 font-black">✓ 7 dias</span>
+            12x de R$49,70 <span className="text-slate-400 font-black">✓ 7 dias</span>
           </p>
         </div>
 

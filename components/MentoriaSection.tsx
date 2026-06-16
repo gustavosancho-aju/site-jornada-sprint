@@ -32,6 +32,10 @@ const MentoriaSection: React.FC<MentoriaSectionProps> = ({ onCheckout }) => {
               no seu contexto, no seu ritmo.
             </p>
 
+            <p className="text-brand-green/90 font-bold text-base md:text-lg leading-relaxed">
+              Mas atenção: a mentoria individual só é viável enquanto a turma é pequena. Quanto mais gente entra, menor a chance de garantir a sua.
+            </p>
+
             <div className="space-y-4">
               {[
                 { icon: UserCheck, text: 'Sessão 1:1 — sessão individual gravada' },
@@ -65,7 +69,7 @@ const MentoriaSection: React.FC<MentoriaSectionProps> = ({ onCheckout }) => {
 
               <div className="mt-6 pt-6 border-t border-white/10">
                 <p className="text-slate-600 text-xs uppercase tracking-widest font-bold mb-1">Se fosse cobrada separadamente</p>
-                <p className="text-slate-500 text-xl font-black line-through">R$ 497,00</p>
+                <p className="text-slate-500 text-xl font-black line-through">R$ 2.500,00</p>
                 <p className="text-brand-green font-black text-lg mt-1">Incluída GRÁTIS</p>
               </div>
             </div>

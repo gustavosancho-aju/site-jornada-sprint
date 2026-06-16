@@ -24,7 +24,7 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
               content_name: 'Jornada Sprint IA — Oferta',
               content_category: 'Course',
               currency: 'BRL',
-              value: 297.00,
+              value: 497.00,
             });
           }
           observer.disconnect();
@@ -144,7 +144,7 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
           </div>
           <div className="flex-shrink-0 text-center">
             <p className="text-slate-600 text-xs font-black uppercase tracking-widest mb-1">Valor separado</p>
-            <p className="text-slate-500 text-xl font-black line-through">R$ 497</p>
+            <p className="text-slate-500 text-xl font-black line-through">R$ 2.500</p>
             <p className="text-brand-green font-black text-lg">GRÁTIS</p>
           </div>
         </div>
@@ -189,7 +189,7 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
         <div className="mb-10">
           <p className="text-slate-500 uppercase tracking-[0.4em] text-sm mb-6 font-black">12 Meses de Transformação Real</p>
           <div className="relative inline-block">
-            <span className="text-5xl md:text-7xl font-black text-slate-700 opacity-40 italic tracking-tighter">R$ 997,00</span>
+            <span className="text-5xl md:text-7xl font-black text-slate-700 opacity-40 italic tracking-tighter">R$ 1.997,00</span>
             <div className="absolute top-1/2 left-0 w-full h-1.5 bg-red-600/80 -rotate-6 shadow-lg"></div>
           </div>
         </div>
@@ -199,11 +199,12 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
           <div className="flex flex-col items-center justify-center gap-0">
             <span className="text-xl md:text-3xl font-black text-white/40 uppercase italic tracking-widest">12x de</span>
             <div className="text-7xl md:text-[10rem] font-black text-brand-green tracking-tighter leading-none flex items-baseline drop-shadow-xl">
-              <span className="text-4xl md:text-6xl mr-2">R$</span>29,70
+              <span className="text-4xl md:text-6xl mr-2">R$</span>49,70
             </div>
           </div>
-          <p className="mt-4 text-slate-500 text-sm md:text-base font-bold">ou R$ 297,00 à vista</p>
+          <p className="mt-4 text-slate-500 text-sm md:text-base font-bold">ou R$ 497,00 à vista</p>
           <p className="text-brand-green/50 text-xs mt-1 uppercase tracking-[0.3em] font-black">Um ano inteiro de acesso, evolução e resultados reais</p>
+          <p className="mt-6 text-white font-bold text-base md:text-lg">Este é o preço de lançamento da <span className="text-brand-green">Sprint 003</span>. Na próxima turma, ele sobe.</p>
         </div>
 
         <button onClick={onCheckout} className="btn-shine w-full bg-brand-green text-black font-black text-lg md:text-xl py-6 md:py-8 px-8 md:px-12 rounded-3xl hover:bg-brand-green/90 hover:scale-[1.03] transition-all shadow-[0_0_50px_rgba(34,197,94,0.5)] flex items-center justify-center gap-4 mx-auto group active:scale-95 duration-200 glow-pulse">

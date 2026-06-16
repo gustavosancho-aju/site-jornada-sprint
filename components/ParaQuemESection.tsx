@@ -21,7 +21,7 @@ const qualifications = [
   },
   {
     text: 'Quer ser a referência em IA no seu mercado ou área de atuação',
-    sublabel: 'enquanto a concorrência ainda está aprendendo o básico',
+    sublabel: "enquanto seus concorrentes ainda estão no 'depois eu vejo isso'",
   },
   {
     text: 'Está disposto a dedicar 12 meses para dominar IA de verdade',

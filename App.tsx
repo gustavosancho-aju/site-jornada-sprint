@@ -71,7 +71,7 @@ function App() {
           content_name: 'Jornada Sprint IA',
           content_category: 'Course',
           currency: 'BRL',
-          value: 297.00,
+          value: 497.00,
         });
       }
     } catch (_) {

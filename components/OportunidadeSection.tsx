@@ -33,6 +33,9 @@ const OportunidadeSection = () => (
           <p>
             A Jornada Sprint é o caminho que eu queria ter tido quando comecei. Tudo o que aprendi, estruturado, prático e direto ao ponto.
           </p>
+          <p className="text-white font-bold text-xl md:text-2xl text-center py-4">
+            A diferença entre quem lucra com IA e quem fica para trás não é talento — é <span className="text-brand-green">quem começou primeiro.</span> Sua vez é agora.
+          </p>
         </div>
 
         <div className="pt-4">
