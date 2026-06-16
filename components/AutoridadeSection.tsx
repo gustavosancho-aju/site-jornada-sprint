@@ -21,7 +21,7 @@ const AutoridadeSection: React.FC = () => {
             <Award className="w-4 h-4" />
             Quem vai te guiar
           </div>
-          <h2 className="font-heading text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-tight">
+          <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-tight">
             Por trás da <span className="text-brand-green">Jornada Sprint</span>
           </h2>
         </div>
@@ -34,7 +34,7 @@ const AutoridadeSection: React.FC = () => {
               <div className="absolute inset-0 bg-brand-green/15 blur-[80px] rounded-full" />
               <div className="relative z-10 w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-brand-green/30 shadow-[0_0_50px_rgba(34,197,94,0.25)] float-slow">
                 <img
-                  src="https://i.postimg.cc/Sx3rF9TR/Gemini-Generated-Image-rb4rhvrb4rhvrb4r-removebg-preview.png"
+                  src="/gustavo-sancho.png"
                   alt="Gustavo Sancho — Especialista em IA para Resultados"
                   className="w-full h-full object-cover object-top scale-110"
                   loading="lazy"

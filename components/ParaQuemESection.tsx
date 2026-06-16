@@ -21,7 +21,7 @@ const qualifications = [
   },
   {
     text: 'Quer ser a referência em IA no seu mercado ou área de atuação',
-    sublabel: 'enquanto a concorrência ainda está aprendendo o básico',
+    sublabel: "enquanto seus concorrentes ainda estão no 'depois eu vejo isso'",
   },
   {
     text: 'Está disposto a dedicar 12 meses para dominar IA de verdade',
@@ -31,14 +31,14 @@ const qualifications = [
 
 const ParaQuemESection: React.FC = () => {
   return (
-    <section id="para-quem-e" className="relative py-20 md:py-32 bg-brand-green overflow-hidden">
+    <section id="para-quem-e" className="relative py-12 md:py-16 bg-brand-green overflow-hidden">
       <SectionMatrixBackground />
 
-      <div className="container mx-auto max-w-5xl px-4 relative z-10">
+      <div className="container mx-auto max-w-6xl px-4 relative z-10">
 
         {/* ── Headline ── */}
-        <div className="reveal text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-6xl font-black uppercase leading-tight tracking-tighter text-black">
+        <div className="reveal text-center mb-14">
+          <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-tight tracking-tighter text-black">
             Esta Jornada{' '}
             <span className="relative inline-block mx-2">
               <span className="absolute inset-0 bg-black transform -skew-x-12 shadow-[0_0_20px_rgba(0,0,0,0.3)]" />

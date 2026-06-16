@@ -17,7 +17,7 @@ const FAQSection: React.FC = () => {
     },
     {
       question: "O conteúdo é atualizado?",
-      answer: "Sempre. A IA evolui todo mês — e nós também. Toda vez que surgir uma nova ferramenta, estratégia ou prompt relevante para o mercado imobiliário, o conteúdo é atualizado e você é avisado na hora. Você não vai ficar para trás."
+      answer: "Sempre. A IA evolui todo mês — e nós também. Toda vez que surgir uma nova ferramenta, estratégia ou prompt relevante para o seu mercado, o conteúdo é atualizado e você é avisado na hora. Você não vai ficar para trás."
     },
     {
       question: "Por quanto tempo tenho acesso ao curso?",
@@ -28,8 +28,12 @@ const FAQSection: React.FC = () => {
       answer: "Não. Zero. Se você sabe usar o WhatsApp, você está pronto para começar. O método Sprint foi criado justamente para quem nunca tocou em IA antes — e quer ir do zero ao avançado sem complicação. A complexidade fica com a gente. Você foca nos resultados."
     },
     {
+      question: "R$ 497 é caro?",
+      answer: "Depende com o que você compara. Uma única peça desse ecossistema vale mais que isso: as imersões sozinhas valem R$ 1.497, o Hub de Soluções R$ 997, e a mentoria individual 1:1 sairia R$ 2.500. Você leva tudo — mais 12 meses de acesso, lives mensais e atualizações — por R$ 497. É menos que um mês de agência, editor ou desenvolvedor. A pergunta certa não é 'é caro?', é 'quanto custa continuar fazendo tudo no braço por mais um ano?'."
+    },
+    {
       question: "Quais são as formas de pagamento?",
-      answer: "Cartão de crédito em até 12x de R$ 29,70, PIX à vista por R$ 297,00 ou boleto bancário. Tudo processado com segurança total pela InfinitePay. Você escolhe a forma que faz mais sentido pra você."
+      answer: "Cartão de crédito em até 12x de R$ 49,70, PIX à vista por R$ 497,00 ou boleto bancário. Tudo processado com segurança total pela InfinitePay. Você escolhe a forma que faz mais sentido pra você."
     },
     {
       question: "Já tentei outros cursos de IA e não funcionou. Por que esse seria diferente?",
@@ -46,18 +50,18 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="relative border-t border-brand-green/10 py-24 px-4 overflow-hidden">
+    <section id="faq" className="relative border-t border-brand-green/10 py-12 md:py-16 overflow-hidden">
       <MatrixVideoBackground />
-      <div className="container mx-auto max-w-4xl relative z-10">
+      <div className="container mx-auto max-w-4xl px-4 relative z-10">
         <div className="text-center mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 border border-brand-green/20 text-brand-green font-bold uppercase tracking-widest text-xs">
             <HelpCircle className="w-4 h-4" />
             Tire suas Dúvidas
           </div>
-          <h2 className="font-heading text-4xl md:text-5xl font-black text-white uppercase tracking-tighter">
+          <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter">
             Perguntas <span className="text-brand-green">Frequentes</span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-400 text-lg md:text-xl max-w-2xl !mx-auto">
             As dúvidas que você tem agora — respondidas com honestidade, sem enrolação.
           </p>
         </div>
