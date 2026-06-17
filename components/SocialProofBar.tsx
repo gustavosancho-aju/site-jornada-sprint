@@ -31,43 +31,43 @@ const SocialProofBar: React.FC = () => {
   const initials = ['M', 'K', 'F', 'R', 'L', 'T'];
 
   return (
-    <div ref={ref} className="bg-brand-green py-4 px-4 relative overflow-hidden">
+    <div ref={ref} className="bg-black border-y border-brand-green/15 py-4 px-4 relative overflow-hidden">
       <div className="container mx-auto max-w-6xl flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-10 flex-wrap">
 
         <div className="flex items-center gap-3">
           <div className="flex -space-x-2">
             {initials.map((initial, i) => (
-              <div key={i} className="w-8 h-8 rounded-full bg-black border-2 border-brand-green flex items-center justify-center text-brand-green text-xs font-black">
+              <div key={i} className="w-8 h-8 rounded-full bg-brand-green/10 border-2 border-brand-green flex items-center justify-center text-brand-green text-xs font-black">
                 {initial}
               </div>
             ))}
           </div>
-          <span className="text-black font-black text-sm">
-            <span className="text-xl font-black">+{count}</span> profissionais transformados
+          <span className="text-white font-black text-sm">
+            <span className="text-xl font-black text-brand-green">+{count}</span> profissionais transformados
           </span>
         </div>
 
-        <div className="hidden sm:block w-px h-5 bg-black/20" />
+        <div className="hidden sm:block w-px h-5 bg-white/15" />
 
         <div className="flex items-center gap-2">
           {[1, 2, 3, 4, 5].map(i => (
-            <Star key={i} className="w-4 h-4 fill-black text-black" />
+            <Star key={i} className="w-4 h-4 fill-brand-green text-brand-green" />
           ))}
-          <span className="text-black font-bold text-sm ml-1">Sprint 003 — Vagas Abertas</span>
+          <span className="text-slate-300 font-bold text-sm ml-1">Sprint 003 — Últimas Vagas</span>
         </div>
 
-        <div className="hidden sm:block w-px h-5 bg-black/20" />
+        <div className="hidden sm:block w-px h-5 bg-white/15" />
 
         <div className="flex items-center gap-2">
-          <Shield className="w-4 h-4 text-black" />
-          <span className="text-black font-bold text-sm">Garantia de 7 dias</span>
+          <Shield className="w-4 h-4 text-brand-green" />
+          <span className="text-slate-300 font-bold text-sm">Garantia de 7 dias</span>
         </div>
 
-        <div className="hidden sm:block w-px h-5 bg-black/20" />
+        <div className="hidden sm:block w-px h-5 bg-white/15" />
 
         <div className="flex items-center gap-2">
-          <Zap className="w-4 h-4 fill-black text-black" />
-          <span className="text-black font-bold text-sm">100% dos alunos recomendam</span>
+          <Zap className="w-4 h-4 fill-brand-green text-brand-green" />
+          <span className="text-slate-300 font-bold text-sm">100% dos alunos recomendam</span>
         </div>
 
       </div>
