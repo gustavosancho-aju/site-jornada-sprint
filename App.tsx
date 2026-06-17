@@ -18,6 +18,7 @@ const FAQSection = React.lazy(() => import('./components/FAQSection'));
 const AutoridadeSection = React.lazy(() => import('./components/AutoridadeSection'));
 const ParaQuemESection = React.lazy(() => import('./components/ParaQuemESection'));
 const CurriculoSection = React.lazy(() => import('./components/CurriculoSection'));
+const AutomacaoSection = React.lazy(() => import('./components/AutomacaoSection'));
 const ResultadosReaisSection = React.lazy(() => import('./components/ResultadosReaisSection'));
 const GarantiaSection = React.lazy(() => import('./components/GarantiaSection'));
 const UrgenciaSection = React.lazy(() => import('./components/UrgenciaSection'));
@@ -144,6 +145,9 @@ function App() {
 
           {/* Currículo — O que vai aprender */}
           <CurriculoSection />
+
+          {/* Automação — Fio condutor: o que você vai automatizar */}
+          <AutomacaoSection onCheckout={handleCheckout} />
 
           {/* Mentoria 1:1 — Killer Promise */}
           <MentoriaSection onCheckout={handleCheckout} />

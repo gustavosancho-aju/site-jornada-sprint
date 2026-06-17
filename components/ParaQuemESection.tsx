@@ -12,8 +12,8 @@ const qualifications = [
     sublabel: 'e está pronto para parar de só ouvir falar e realmente fazer acontecer',
   },
   {
-    text: 'Quer criar uma operação mais inteligente, com menos esforço e mais resultado',
-    sublabel: 'processos automáticos que trabalham por você enquanto você foca no que importa',
+    text: 'Quer automatizar tarefas repetitivas e parar de fazer tudo no braço',
+    sublabel: 'e-mails, relatórios, atendimento e captação rodando no automático enquanto você foca no que importa',
   },
   {
     text: 'Está cansado de depender de agência, editor ou desenvolvedor',

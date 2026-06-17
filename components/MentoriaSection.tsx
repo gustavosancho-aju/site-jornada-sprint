@@ -28,8 +28,8 @@ const MentoriaSection: React.FC<MentoriaSectionProps> = ({ onCheckout }) => {
             <p className="text-slate-300 text-lg md:text-xl leading-relaxed">
               Você não vai ficar sozinho. Ao entrar na Jornada Sprint, ganha
               <strong className="text-white"> 1 hora de mentoria individual</strong> para
-              tirar seu projeto de IA do papel — com direcionamento personalizado,
-              no seu contexto, no seu ritmo.
+              montar sua primeira automação ou assistente direto no seu negócio —
+              com direcionamento personalizado, no seu contexto, no seu ritmo.
             </p>
 
             <p className="text-brand-green/90 font-bold text-base md:text-lg leading-relaxed">

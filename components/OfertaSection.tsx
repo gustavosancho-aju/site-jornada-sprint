@@ -72,6 +72,7 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
             <p className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-brand-green" /> Jornada Criando Sites com IA</p>
             <p className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-brand-green" /> Jornada Imagens com IA</p>
             <p className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-brand-green" /> Jornada Criando Sistemas com IA <span className="text-xs bg-brand-green/20 text-brand-green px-2 py-0.5 rounded-full font-black ml-1">NOVO</span></p>
+            <p className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-brand-green" /> Jornada Automações com IA <span className="text-xs bg-brand-green/20 text-brand-green px-2 py-0.5 rounded-full font-black ml-1">NOVO</span></p>
           </div>
           <div className="pt-8 border-t border-white/10">
             <span className="text-xs font-black text-slate-600 uppercase tracking-widest block mb-2">Valor Individual</span>
