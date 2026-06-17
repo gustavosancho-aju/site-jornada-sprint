@@ -38,7 +38,7 @@ const ComoFuncionaSection: React.FC<ComoFuncionaSectionProps> = ({ onCheckout })
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/20 border border-black/30 text-black font-black uppercase tracking-widest text-xs mb-6">
             Simples assim
           </div>
-          <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-tight tracking-tighter text-black">
+          <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-tight tracking-tighter text-black">
             Como funciona{' '}
             <span className="relative inline-block">
               <span className="absolute inset-0 bg-black transform -skew-x-12 shadow-[0_0_20px_rgba(0,0,0,0.3)]" />

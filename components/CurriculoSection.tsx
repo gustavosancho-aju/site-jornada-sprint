@@ -24,7 +24,7 @@ const CurriculoSection: React.FC = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 border border-brand-green/20 text-brand-green font-bold uppercase tracking-widest text-xs mb-6 badge-pulse">
             O que você vai dominar
           </div>
-          <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-tight">
+          <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter leading-tight">
             8 Imersões.<br />
             <span className="text-brand-green">8 Transformações.</span>
           </h2>

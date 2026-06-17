@@ -18,7 +18,7 @@ const UrgenciaSection: React.FC<UrgenciaSectionProps> = ({ onCheckout }) => {
           Sprint 003 — Preço de Lançamento
         </div>
 
-        <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-black leading-tight mb-4">
+        <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-black leading-tight mb-4">
           Preço de Lançamento
         </h2>
 

@@ -41,7 +41,7 @@ const AutomacaoSection: React.FC<AutomacaoSectionProps> = ({ onCheckout }) => {
             <Bot className="w-4 h-4" />
             O coração da Jornada
           </div>
-          <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-tight tracking-tighter text-white">
+          <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-tight tracking-tighter text-white">
             O que você vai <span className="text-brand-green">automatizar</span>
           </h2>
           <p className="text-slate-400 mt-6 text-lg md:text-xl font-medium max-w-2xl text-center">

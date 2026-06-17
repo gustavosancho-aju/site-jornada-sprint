@@ -26,7 +26,7 @@ const GarantiaSection: React.FC<GarantiaSectionProps> = ({ onCheckout }) => {
 
             {/* Headline */}
             <div>
-              <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-2">
+              <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter mb-2">
                 Garantia <span className="text-brand-green">Incondicional</span>
               </h2>
               <p className="text-brand-green font-black uppercase tracking-widest text-sm">

@@ -39,7 +39,7 @@ const WhatsAppTestimonialsSection: React.FC = () => {
             <MessageCircle className="w-4 h-4" />
             Direto do WhatsApp
           </div>
-          <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-tight">
+          <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter leading-tight">
             Não acredite em mim.<br />
             <span className="text-brand-green">Acredite neles.</span>
           </h2>

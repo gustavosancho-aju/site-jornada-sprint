@@ -27,7 +27,7 @@ const NaoEParaSection = () => {
       </React.Suspense>
       <div className="container mx-auto max-w-4xl text-center px-4 relative z-10">
         <div className="relative inline-block mb-8">
-           <h2 className="relative z-10 font-heading text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-tight tracking-tighter text-black drop-shadow-sm">
+           <h2 className="relative z-10 font-heading text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-tight tracking-tighter text-black drop-shadow-sm">
              Este Caminho <br className="md:hidden" />
              <span className="relative inline-block mx-3">
                <span className="absolute inset-0 bg-black transform -skew-x-12 shadow-[0_0_20px_rgba(0,0,0,0.3)]"></span>
