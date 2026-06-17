@@ -5,7 +5,7 @@ import { Award, TrendingUp, Quote, Users, Calendar, Star } from 'lucide-react';
 const stats = [
   { value: '8+', label: 'anos de vendas & IA' },
   { value: '+200', label: 'profissionais transformados' },
-  { value: '3ª', label: 'turma — sprint 003' },
+  { value: '+3', label: 'turmas já realizadas' },
   { value: 'R$1M+', label: 'em sistemas criados com IA' },
 ];
 
@@ -45,7 +45,7 @@ const AutoridadeSection: React.FC = () => {
               </div>
               {/* Floating badge — now with glow */}
               <div className="absolute -bottom-3 -right-3 bg-brand-green text-black px-4 py-2 rounded-full font-black text-sm shadow-lg z-20 shadow-[0_0_20px_rgba(34,197,94,0.6)]">
-                Sprint 003 ✦
+Gustavo Sancho ✦
               </div>
             </div>
 

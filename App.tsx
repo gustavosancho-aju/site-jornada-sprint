@@ -21,6 +21,7 @@ const CurriculoSection = React.lazy(() => import('./components/CurriculoSection'
 const AutomacaoSection = React.lazy(() => import('./components/AutomacaoSection'));
 const ComoFuncionaSection = React.lazy(() => import('./components/ComoFuncionaSection'));
 const SocialProofBar = React.lazy(() => import('./components/SocialProofBar'));
+const LeadMagnetSection = React.lazy(() => import('./components/LeadMagnetSection'));
 const ResultadosReaisSection = React.lazy(() => import('./components/ResultadosReaisSection'));
 const GarantiaSection = React.lazy(() => import('./components/GarantiaSection'));
 const UrgenciaSection = React.lazy(() => import('./components/UrgenciaSection'));
@@ -185,6 +186,9 @@ function App() {
 
           {/* Urgência — CTA final */}
           <UrgenciaSection onCheckout={handleCheckout} />
+
+          {/* Lead Magnet — isca grátis pra capturar quem não comprou */}
+          <LeadMagnetSection />
         </React.Suspense>
       </main>
 

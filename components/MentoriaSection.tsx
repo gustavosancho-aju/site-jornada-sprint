@@ -33,7 +33,7 @@ const MentoriaSection: React.FC<MentoriaSectionProps> = ({ onCheckout }) => {
             </p>
 
             <p className="text-brand-green/90 font-bold text-base md:text-lg leading-relaxed">
-              Mas atenção: a mentoria individual só é viável enquanto a turma é pequena. Quanto mais gente entra, menor a chance de garantir a sua.
+              E o melhor: ela já está <strong className="text-white">incluída</strong> — sem custo extra, sem pegadinha. É só agendar e levar seu projeto.
             </p>
 
             <div className="space-y-4">

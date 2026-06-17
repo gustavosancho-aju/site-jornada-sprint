@@ -188,15 +188,32 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
       <div id="investimento" className="reveal max-w-3xl mx-auto bg-black/90 backdrop-blur-xl border border-white/10 rounded-[40px] p-6 md:p-20 text-center relative overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
         <div className="absolute top-0 left-0 w-full h-3 bg-brand-green shadow-[0_0_20px_rgba(34,197,94,0.6)]"></div>
         <div className="mb-10">
-          <p className="text-slate-500 uppercase tracking-[0.4em] text-sm mb-6 font-black">12 Meses de Transformação Real</p>
-          <div className="relative inline-block">
-            <span className="text-5xl md:text-7xl font-black text-slate-700 opacity-40 italic tracking-tighter">R$ 1.997,00</span>
-            <div className="absolute top-1/2 left-0 w-full h-1.5 bg-red-600/80 -rotate-6 shadow-lg"></div>
+          <p className="text-slate-500 uppercase tracking-[0.3em] text-xs md:text-sm mb-5 font-black">Tudo que você leva</p>
+          <div className="max-w-md mx-auto space-y-2.5 text-left mb-5">
+            {[
+              ['8 Imersões Sprint', 'R$ 1.497'],
+              ['Hub de Soluções com IA', 'R$ 997'],
+              ['Mentoria Individual 1:1', 'R$ 2.500'],
+              ['Lives mensais (12 meses)', 'incluído'],
+              ['Grupo exclusivo de alunos', 'incluído'],
+            ].map(([item, valor], i) => (
+              <div key={i} className="flex items-center justify-between gap-3 text-sm md:text-base">
+                <span className="flex items-center gap-2 text-slate-300 font-medium"><CheckCircle className="w-4 h-4 text-brand-green shrink-0" /> {item}</span>
+                <span className={`font-black shrink-0 ${valor === 'incluído' ? 'text-brand-green/70 text-xs uppercase tracking-wider' : 'text-slate-500 line-through'}`}>{valor}</span>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between max-w-md mx-auto border-t border-white/10 pt-4">
+            <span className="text-white font-black uppercase tracking-widest text-sm">Valor total</span>
+            <div className="relative inline-block">
+              <span className="text-3xl md:text-4xl font-black text-slate-600 italic">R$ 4.994</span>
+              <div className="absolute top-1/2 left-0 w-full h-1 bg-red-600/80 -rotate-3 shadow-lg"></div>
+            </div>
           </div>
         </div>
 
         <div className="flex flex-col items-center justify-center gap-1 mb-12">
-          <p className="text-brand-green font-black text-xl uppercase tracking-widest mb-4 drop-shadow-md">Investimento de Lançamento</p>
+          <p className="text-brand-green font-black text-xl uppercase tracking-widest mb-4 drop-shadow-md">Você leva tudo por</p>
           <div className="flex flex-col items-center justify-center gap-0">
             <span className="text-xl md:text-3xl font-black text-white/40 uppercase italic tracking-widest">12x de</span>
             <div className="text-7xl md:text-[10rem] font-black text-brand-green tracking-tighter leading-none flex items-baseline drop-shadow-xl">
@@ -204,15 +221,15 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
             </div>
           </div>
           <p className="mt-4 text-slate-500 text-sm md:text-base font-bold">ou R$ 497,00 à vista</p>
-          <p className="text-brand-green/50 text-xs mt-1 uppercase tracking-[0.3em] font-black">Um ano inteiro de acesso, evolução e resultados reais</p>
-          <p className="mt-6 text-white font-bold text-base md:text-lg">Este é o preço de lançamento da <span className="text-brand-green">Sprint 003</span>. Na próxima turma, ele sobe.</p>
+          <p className="text-brand-green/50 text-xs mt-1 uppercase tracking-[0.3em] font-black">12 meses de acesso, evolução e resultados reais</p>
+          <p className="mt-6 text-white font-bold text-base md:text-lg">Mais de <span className="text-brand-green">R$ 4.994 em valor</span> — seu hoje por R$ 497, com acesso imediato.</p>
         </div>
 
         <button onClick={onCheckout} className="btn-shine w-full bg-brand-green text-black font-black text-lg md:text-xl py-6 md:py-8 px-8 md:px-12 rounded-3xl hover:bg-brand-green/90 hover:scale-[1.03] transition-all shadow-[0_0_50px_rgba(34,197,94,0.5)] flex items-center justify-center gap-4 mx-auto group active:scale-95 duration-200 glow-pulse">
           <Zap className="w-8 h-8 md:w-10 md:h-10 fill-black group-hover:scale-125 transition-transform" />
           Quero Garantir Minha Vaga
         </button>
-        <p className="mt-10 text-xs text-slate-600 uppercase tracking-[0.4em] font-black">Garantia de 7 dias. Pagamento seguro via InfinitePay.</p>
+        <p className="mt-10 text-xs text-slate-600 uppercase tracking-[0.4em] font-black">Garantia dupla: 7 dias + resultado em 30 dias. Pagamento seguro via InfinitePay.</p>
       </div>
     </div>
   </section>
