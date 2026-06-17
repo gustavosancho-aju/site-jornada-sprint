@@ -21,10 +21,10 @@ const testimonials = [
     label: 'Calendário editorial em 1 noite',
   },
   {
-    image: '/testimonials/depo-1.webp',
-    name: 'Mentorada',
-    role: 'Sprint 001',
-    label: 'Maravilhada com a imersão',
+    image: '/testimonials/depo-5.webp',
+    name: 'Nadja',
+    role: 'Treinamento Unipar',
+    label: 'Aplicou na prática na mesma semana',
   },
 ];
 
