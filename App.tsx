@@ -19,6 +19,8 @@ const AutoridadeSection = React.lazy(() => import('./components/AutoridadeSectio
 const ParaQuemESection = React.lazy(() => import('./components/ParaQuemESection'));
 const CurriculoSection = React.lazy(() => import('./components/CurriculoSection'));
 const AutomacaoSection = React.lazy(() => import('./components/AutomacaoSection'));
+const ComoFuncionaSection = React.lazy(() => import('./components/ComoFuncionaSection'));
+const SocialProofBar = React.lazy(() => import('./components/SocialProofBar'));
 const ResultadosReaisSection = React.lazy(() => import('./components/ResultadosReaisSection'));
 const GarantiaSection = React.lazy(() => import('./components/GarantiaSection'));
 const UrgenciaSection = React.lazy(() => import('./components/UrgenciaSection'));
@@ -131,12 +133,20 @@ function App() {
             MatrixVideoBackground is portaled into #matrix-bg-portal above.
             ============================================================ */}
 
+        {/* Trust bar — prova social imediata logo abaixo do hero */}
+        <React.Suspense fallback={<div className="min-h-[60px] bg-black" />}>
+          <SocialProofBar />
+        </React.Suspense>
+
         {/* Problema — Identifica a dor */}
         <React.Suspense fallback={<div className="min-h-[300px] bg-brand-green" />}>
           <ProblemaSection />
         </React.Suspense>
 
         <React.Suspense fallback={<div className="min-h-[200px] bg-black" />}>
+          {/* Automação — Fio condutor: dor → solução imediata */}
+          <AutomacaoSection onCheckout={handleCheckout} />
+
           {/* Para Quem É — Qualifica o público */}
           <ParaQuemESection />
 
@@ -146,8 +156,8 @@ function App() {
           {/* Currículo — O que vai aprender */}
           <CurriculoSection />
 
-          {/* Automação — Fio condutor: o que você vai automatizar */}
-          <AutomacaoSection onCheckout={handleCheckout} />
+          {/* Como Funciona — 3 passos, reduz fricção */}
+          <ComoFuncionaSection onCheckout={handleCheckout} />
 
           {/* Mentoria 1:1 — Killer Promise */}
           <MentoriaSection onCheckout={handleCheckout} />
