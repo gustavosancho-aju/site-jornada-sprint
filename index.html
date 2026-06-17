@@ -27,6 +27,9 @@
     <!-- NO font file preloads — let optional window expire before fonts arrive on slow 4G -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=optional" rel="stylesheet"></noscript>
+    <!-- Anton — distinctive condensed display font for headings (swap so the brand always shows) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Anton&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"></noscript>
     <!-- Non-critical CSS — loaded async (animations, hover effects, reveal) -->
     <link rel="stylesheet" href="/deferred.css" media="print" onload="this.onload=null;this.media='all'">
     <noscript><link rel="stylesheet" href="/deferred.css"></noscript>
@@ -78,6 +81,14 @@
         descent-override: 25%;
         line-gap-override: 0%;
       }
+      @font-face {
+        font-family: 'Anton Fallback';
+        src: local('Arial Narrow Bold'), local('Arial Narrow'), local('Arial');
+        size-adjust: 88%;
+        ascent-override: 90%;
+        descent-override: 18%;
+        line-gap-override: 0%;
+      }
       body {
         font-family: 'Poppins', 'Poppins Fallback', sans-serif;
         background-color: #000;
@@ -109,8 +120,8 @@
             </div>
             <!-- Title -->
             <div>
-              <h1 style="font-size:clamp(2.25rem,8vw,6rem);font-weight:900;line-height:0.9;text-transform:uppercase;letter-spacing:-0.025em;margin:0;">JORNADA</h1>
-              <h1 style="font-size:clamp(2.25rem,8vw,6rem);font-weight:900;line-height:0.9;text-transform:uppercase;letter-spacing:-0.025em;margin:0;color:#22c55e;filter:drop-shadow(0 0 30px rgba(34,197,94,0.5));">SPRINT</h1>
+              <h1 style="font-family:'Anton','Anton Fallback',sans-serif;font-size:clamp(2.75rem,9vw,6.75rem);font-weight:400;line-height:0.92;text-transform:uppercase;letter-spacing:0.015em;margin:0;">JORNADA</h1>
+              <h1 style="font-family:'Anton','Anton Fallback',sans-serif;font-size:clamp(2.75rem,9vw,6.75rem);font-weight:400;line-height:0.92;text-transform:uppercase;letter-spacing:0.015em;margin:0;color:#22c55e;filter:drop-shadow(0 0 30px rgba(34,197,94,0.5));">SPRINT</h1>
             </div>
             <!-- Subtitle -->
             <div style="max-width:640px;margin:0 auto;">

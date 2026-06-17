@@ -8,8 +8,8 @@
   --color-gray-950: #0d1117;
 
   /* ─── Font Families ─── */
-  --font-heading: 'Poppins', sans-serif;
-  --font-body: 'Poppins', sans-serif;
+  --font-heading: 'Anton', 'Anton Fallback', sans-serif;
+  --font-body: 'Poppins', 'Poppins Fallback', sans-serif;
 
   /* ─── Custom Animations ─── */
   --animate-fade-in: fadeIn 0.5s ease-out forwards;
@@ -45,4 +45,35 @@
 @keyframes pulseGreen {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0.5; }
+}
+
+/* ─── Display font fallback (Anton) — condensed metrics to minimize swap CLS ─── */
+@font-face {
+  font-family: 'Anton Fallback';
+  src: local('Arial Narrow Bold'), local('Arial Narrow'), local('Arial');
+  size-adjust: 88%;
+  ascent-override: 90%;
+  descent-override: 18%;
+  line-gap-override: 0%;
+}
+
+/* ─── Typography refinements ───────────────────────────────────────────────
+   These rules are intentionally UNLAYERED so they override Tailwind's
+   utility layer (e.g. tracking-tighter). The display headings are condensed
+   caps — they need breathing room between letters AND words, plus balanced
+   line wrapping, to fix the cramped "palavras muito juntas" look.          */
+.font-heading {
+  letter-spacing: 0.012em;
+  word-spacing: 0.05em;
+  text-wrap: balance;
+}
+
+/* Body copy: a hair of tracking for legibility against the dark background */
+body {
+  letter-spacing: 0.005em;
+}
+
+/* Long-form paragraphs read better with a touch more leading + measure */
+.font-body p {
+  text-wrap: pretty;
 }
