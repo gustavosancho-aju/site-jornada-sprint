@@ -53,7 +53,7 @@ const SocialProofBar: React.FC = () => {
           {[1, 2, 3, 4, 5].map(i => (
             <Star key={i} className="w-4 h-4 fill-brand-green text-brand-green" />
           ))}
-          <span className="text-slate-300 font-bold text-sm ml-1">Sprint 003 — Últimas Vagas</span>
+          <span className="text-slate-300 font-bold text-sm ml-1">Aprovado por +200 alunos</span>
         </div>
 
         <div className="hidden sm:block w-px h-5 bg-white/15" />

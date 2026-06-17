@@ -27,37 +27,38 @@ const GarantiaSection: React.FC<GarantiaSectionProps> = ({ onCheckout }) => {
             {/* Headline */}
             <div>
               <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter mb-2">
-                Garantia <span className="text-brand-green">Incondicional</span>
+                Risco <span className="text-brand-green">Zero</span>
               </h2>
               <p className="text-brand-green font-black uppercase tracking-widest text-sm">
-                7 Dias — Zero Risco
+                Garantia dupla — você não tem como perder
               </p>
             </div>
 
-            {/* Body copy */}
-            <div className="max-w-2xl space-y-5">
-              <p className="text-xl text-slate-200 leading-relaxed font-medium">
-                Se em qualquer momento da primeira semana você sentir que a Jornada Sprint não é para você...
-              </p>
-
-              <div className="grid sm:grid-cols-3 gap-3">
-                {['Sem formulários', 'Sem perguntas', 'Sem julgamento'].map((item, i) => (
-                  <div
-                    key={i}
-                    className="bg-black/50 border border-brand-green/20 rounded-xl p-3 flex items-center justify-center gap-2"
-                  >
-                    <CheckCircle className="w-5 h-5 text-brand-green shrink-0" />
-                    <span className="text-white font-bold text-sm">{item}</span>
-                  </div>
-                ))}
+            {/* Body copy — double guarantee */}
+            <div className="max-w-2xl w-full space-y-4 text-left">
+              <div className="bg-black/50 border border-brand-green/20 rounded-2xl p-5">
+                <div className="flex items-center gap-2 mb-2">
+                  <CheckCircle className="w-5 h-5 text-brand-green shrink-0" />
+                  <p className="text-brand-green font-black uppercase tracking-widest text-xs">Garantia 1 — 7 dias, sem perguntas</p>
+                </div>
+                <p className="text-base md:text-lg text-slate-200 leading-relaxed">
+                  Entrou e não curtiu? Em até 7 dias você pede e devolvemos <strong className="text-white">100% do seu dinheiro</strong>. Sem formulário, sem pergunta, sem julgamento.
+                </p>
               </div>
 
-              <p className="text-3xl md:text-4xl font-black text-white leading-tight">
-                Devolvemos{' '}
-                <span className="text-brand-green">100% do seu dinheiro.</span>
-              </p>
+              <div className="bg-black/50 border border-brand-green/40 rounded-2xl p-5 shadow-[0_0_30px_rgba(34,197,94,0.1)]">
+                <div className="flex items-center gap-2 mb-2">
+                  <CheckCircle className="w-5 h-5 text-brand-green shrink-0" />
+                  <p className="text-brand-green font-black uppercase tracking-widest text-xs">Garantia 2 — resultado em 30 dias</p>
+                </div>
+                <p className="text-base md:text-lg text-slate-200 leading-relaxed">
+                  Faça as aulas e use sua mentoria: se em 30 dias você não tiver <strong className="text-white">sua primeira automação funcionando</strong>, eu trabalho 1:1 com você até montar — sem custo extra.
+                </p>
+              </div>
 
-              <p className="text-slate-500 text-xl italic font-medium">Ponto.</p>
+              <p className="text-2xl md:text-3xl font-black text-white leading-tight text-center pt-2">
+                O risco é todo <span className="text-brand-green">meu.</span>
+              </p>
             </div>
 
             {/* CTA */}

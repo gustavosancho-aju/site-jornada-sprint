@@ -9,7 +9,7 @@ const FAQSection: React.FC = () => {
   const faqs = [
     {
       question: "Tenho garantia se eu não gostar?",
-      answer: "Sim. 7 dias de garantia incondicional, protegida por lei. Se em qualquer momento da primeira semana você sentir que a Jornada Sprint não é para você — sem julgamento, sem perguntas — devolvemos 100% do seu investimento. Ponto."
+      answer: "Você tem garantia dupla. (1) 7 dias incondicional: se não curtir, devolvemos 100% do seu dinheiro, sem perguntas. (2) Garantia de resultado: faça as aulas e use sua mentoria — se em 30 dias você não tiver sua primeira automação funcionando, eu trabalho 1:1 com você até montar, sem custo extra. O risco é todo meu."
     },
     {
       question: "Como funciona o suporte às aulas?",
