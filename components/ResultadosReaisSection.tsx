@@ -36,7 +36,7 @@ const ResultadosReaisSection: React.FC = () => {
       <div className="container mx-auto max-w-6xl px-4 relative z-10">
 
         <div className="reveal flex flex-col items-center text-center mb-14">
-          <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-tight tracking-tighter text-black">
+          <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-tight tracking-tighter text-black">
             Resultados{' '}
             <span className="relative inline-block">
               <span className="absolute inset-0 bg-black transform -skew-x-12 shadow-[0_0_20px_rgba(0,0,0,0.3)]" />

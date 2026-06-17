@@ -66,7 +66,9 @@
       }
       html { line-height: 1.5; -webkit-text-size-adjust: 100%; tab-size: 4; }
       body { margin: 0; line-height: inherit; }
-      h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
+      /* NOTE: no unlayered h1–h6 { font-size/font-weight: inherit } here — it would
+         override Tailwind's layered text-* / font-* utilities on section headings.
+         The hero headings set font-size/weight inline, so they need no reset. */
       a { color: inherit; text-decoration: inherit; }
       img, video { display: block; max-width: 100%; height: auto; }
       p, h1, h2, h3, h4, h5, h6 { margin: 0; }
@@ -120,8 +122,8 @@
             </div>
             <!-- Title -->
             <div>
-              <h1 style="font-family:'Anton','Anton Fallback',sans-serif;font-size:clamp(2.75rem,9vw,6.75rem);font-weight:400;line-height:0.92;text-transform:uppercase;letter-spacing:0.015em;margin:0;">JORNADA</h1>
-              <h1 style="font-family:'Anton','Anton Fallback',sans-serif;font-size:clamp(2.75rem,9vw,6.75rem);font-weight:400;line-height:0.92;text-transform:uppercase;letter-spacing:0.015em;margin:0;color:#22c55e;filter:drop-shadow(0 0 30px rgba(34,197,94,0.5));">SPRINT</h1>
+              <h1 style="font-family:'Anton','Anton Fallback',sans-serif;font-size:clamp(3.25rem,10.5vw,8rem);font-weight:400;line-height:0.92;text-transform:uppercase;letter-spacing:0.015em;margin:0;">JORNADA</h1>
+              <h1 style="font-family:'Anton','Anton Fallback',sans-serif;font-size:clamp(3.25rem,10.5vw,8rem);font-weight:400;line-height:0.92;text-transform:uppercase;letter-spacing:0.015em;margin:0;color:#22c55e;filter:drop-shadow(0 0 30px rgba(34,197,94,0.5));">SPRINT</h1>
             </div>
             <!-- Subtitle -->
             <div style="max-width:640px;margin:0 auto;">

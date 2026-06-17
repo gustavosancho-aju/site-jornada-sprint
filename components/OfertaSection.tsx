@@ -44,10 +44,10 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
     </React.Suspense>
     <div className="container mx-auto max-w-6xl px-4 relative z-10">
       <div className="text-center mb-20">
-        <div aria-hidden="true" className="font-heading text-5xl md:text-7xl lg:text-9xl font-black text-black uppercase tracking-tighter mb-4 opacity-10 absolute -top-10 left-1/2 -translate-x-1/2 w-full select-none">
+        <div aria-hidden="true" className="font-heading text-6xl md:text-8xl lg:text-[10rem] font-black text-black uppercase tracking-tighter mb-4 opacity-10 absolute -top-10 left-1/2 -translate-x-1/2 w-full select-none">
           OFERTA ÚNICA
         </div>
-        <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-black uppercase tracking-tighter relative z-10 drop-shadow-sm">
+        <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black text-black uppercase tracking-tighter relative z-10 drop-shadow-sm">
           JORNADA <span className="text-white bg-black px-4 py-1 transform -skew-x-12 inline-block">SPRINT</span>
         </h2>
         <p className="text-black/80 text-lg md:text-xl font-bold uppercase tracking-[0.2em] mt-6 drop-shadow-sm">O que você está recebendo</p>

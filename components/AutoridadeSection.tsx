@@ -21,7 +21,7 @@ const AutoridadeSection: React.FC = () => {
             <Award className="w-4 h-4" />
             Quem vai te guiar
           </div>
-          <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-tight">
+          <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter leading-tight">
             Por trás da <span className="text-brand-green">Jornada Sprint</span>
           </h2>
         </div>

@@ -10,7 +10,7 @@ const ProblemaSection = () => (
     <div className="container mx-auto max-w-6xl px-4">
       {/* Title — full width, centered */}
       <div className="text-center mb-16 relative z-10">
-        <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.85] tracking-tighter text-black select-none drop-shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
+        <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.85] tracking-tighter text-black select-none drop-shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
           Para quem é a<br/>
           <span className="inline-block bg-black text-brand-green px-6 py-2 transform -rotate-2 mt-4 shadow-[0_0_30px_rgba(0,0,0,0.3)] font-black">JORNADA SPRINT</span>
         </h2>

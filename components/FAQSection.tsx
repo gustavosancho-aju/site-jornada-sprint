@@ -62,7 +62,7 @@ const FAQSection: React.FC = () => {
             <HelpCircle className="w-4 h-4" />
             Tire suas Dúvidas
           </div>
-          <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter">
+          <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter">
             Perguntas <span className="text-brand-green">Frequentes</span>
           </h2>
           <p className="text-slate-400 text-lg md:text-xl max-w-2xl !mx-auto">

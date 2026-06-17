@@ -20,7 +20,7 @@ const MentoriaSection: React.FC<MentoriaSectionProps> = ({ onCheckout }) => {
               Bônus exclusivo
             </div>
 
-            <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-tight">
+            <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter leading-tight">
               Sessão <span className="text-brand-green">individual</span><br />
               gravada
             </h2>
