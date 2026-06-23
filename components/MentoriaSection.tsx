@@ -68,9 +68,8 @@ const MentoriaSection: React.FC<MentoriaSectionProps> = ({ onCheckout }) => {
               <p className="text-slate-400 text-sm">Sessão individual gravada</p>
 
               <div className="mt-6 pt-6 border-t border-white/10">
-                <p className="text-slate-600 text-xs uppercase tracking-widest font-bold mb-1">Se fosse cobrada separadamente</p>
-                <p className="text-slate-500 text-xl font-black line-through">R$ 2.500,00</p>
-                <p className="text-brand-green font-black text-lg mt-1">Incluída GRÁTIS</p>
+                <p className="text-slate-600 text-xs uppercase tracking-widest font-bold mb-1">Sua mentoria individual</p>
+                <p className="text-brand-green font-black text-2xl mt-1">Incluída na Jornada</p>
               </div>
             </div>
           </div>
