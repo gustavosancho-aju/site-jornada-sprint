@@ -29,7 +29,7 @@ const FAQSection: React.FC = () => {
     },
     {
       question: "Preciso saber programar para criar automações?",
-      answer: "Não. Tudo é feito com agentes e GPTs com ações — você descreve o que quer automatizar em linguagem natural e a IA executa. Sem código, sem plataforma complicada. Você vai montar, ao vivo, automações reais para e-mail, relatórios, atendimento no WhatsApp e captação de leads. A complexidade fica com a gente; você fica com o tempo livre."
+      answer: "Não. Tudo é feito com assistentes de IA — você descreve o que quer automatizar em linguagem natural e a IA executa. Sem código, sem plataforma complicada. Você vai montar, ao vivo, automações reais para e-mail, relatórios, atendimento no WhatsApp e captação de leads. A complexidade fica com a gente; você fica com o tempo livre."
     },
     {
       question: "R$ 497 é caro?",

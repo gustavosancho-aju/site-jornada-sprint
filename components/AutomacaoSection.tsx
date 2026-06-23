@@ -45,7 +45,7 @@ const AutomacaoSection: React.FC<AutomacaoSectionProps> = ({ onCheckout }) => {
             O que você vai <span className="text-brand-green">automatizar</span>
           </h2>
           <p className="text-slate-400 mt-6 text-lg md:text-xl font-medium max-w-2xl text-center">
-            Pare de fazer no braço o que a IA pode fazer por você. Você vai montar agentes e GPTs com ações que executam as tarefas repetitivas — <span className="text-white font-bold">sem precisar programar.</span>
+            Pare de fazer no braço o que a IA pode fazer por você. Você vai montar assistentes de IA que executam as tarefas repetitivas por você — <span className="text-white font-bold">sem precisar programar.</span>
           </p>
         </div>
 
