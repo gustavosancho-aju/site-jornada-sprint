@@ -47,7 +47,7 @@ const UrgenciaSection: React.FC<UrgenciaSectionProps> = ({ onCheckout }) => {
           className="btn-shine inline-flex items-center gap-3 bg-black text-brand-green font-black text-xl px-12 py-6 rounded-2xl hover:bg-black/80 transition-all shadow-[0_0_40px_rgba(0,0,0,0.4),0_0_20px_rgba(34,197,94,0.15)] hover:-translate-y-1 active:scale-95 group mb-6"
         >
           <Zap className="w-7 h-7 fill-brand-green group-hover:scale-125 transition-transform" />
-          Quero Garantir Minha Vaga
+          Quero Entrar Agora
           <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
         </button>
       </div>

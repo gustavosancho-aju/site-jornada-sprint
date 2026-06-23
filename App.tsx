@@ -122,7 +122,7 @@ function App() {
             </nav>
 
             <button onClick={handleCheckout} className="bg-brand-green text-black text-xs font-black uppercase px-6 py-2.5 rounded-full hover:bg-brand-green/80 transition-all shadow-[0_0_15px_rgba(34,197,94,0.4)]">
-              Garantir Minha Vaga
+              Entrar Agora
             </button>
           </div>
         </div>

@@ -226,7 +226,7 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
 
         <button onClick={onCheckout} className="btn-shine w-full bg-brand-green text-black font-black text-lg md:text-xl py-6 md:py-8 px-8 md:px-12 rounded-3xl hover:bg-brand-green/90 hover:scale-[1.03] transition-all shadow-[0_0_50px_rgba(34,197,94,0.5)] flex items-center justify-center gap-4 mx-auto group active:scale-95 duration-200 glow-pulse">
           <Zap className="w-8 h-8 md:w-10 md:h-10 fill-black group-hover:scale-125 transition-transform" />
-          Quero Garantir Minha Vaga
+          Quero Entrar Agora
         </button>
         <p className="mt-10 text-xs text-slate-600 uppercase tracking-[0.4em] font-black">Garantia dupla: 7 dias + resultado em 30 dias. Pagamento seguro via InfinitePay.</p>
       </div>
