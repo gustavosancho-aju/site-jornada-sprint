@@ -144,9 +144,8 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
             </p>
           </div>
           <div className="flex-shrink-0 text-center">
-            <p className="text-slate-600 text-xs font-black uppercase tracking-widest mb-1">Valor separado</p>
-            <p className="text-slate-500 text-xl font-black line-through">R$ 2.500</p>
-            <p className="text-brand-green font-black text-lg">GRÁTIS</p>
+            <p className="text-slate-600 text-xs font-black uppercase tracking-widest mb-1">Bônus exclusivo</p>
+            <p className="text-brand-green font-black text-lg">Incluída GRÁTIS</p>
           </div>
         </div>
       </div>
@@ -193,7 +192,7 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
             {[
               ['8 Imersões Sprint', 'R$ 1.497'],
               ['Hub de Soluções com IA', 'R$ 997'],
-              ['Mentoria Individual 1:1', 'R$ 2.500'],
+              ['Mentoria Individual 1:1', 'incluído'],
               ['Lives mensais (12 meses)', 'incluído'],
               ['Grupo exclusivo de alunos', 'incluído'],
             ].map(([item, valor], i) => (
@@ -206,7 +205,7 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
           <div className="flex items-center justify-between max-w-md mx-auto border-t border-white/10 pt-4">
             <span className="text-white font-black uppercase tracking-widest text-sm">Valor total</span>
             <div className="relative inline-block">
-              <span className="text-3xl md:text-4xl font-black text-slate-600 italic">R$ 4.994</span>
+              <span className="text-3xl md:text-4xl font-black text-slate-600 italic">R$ 2.494</span>
               <div className="absolute top-1/2 left-0 w-full h-1 bg-red-600/80 -rotate-3 shadow-lg"></div>
             </div>
           </div>
@@ -222,7 +221,7 @@ const OfertaSection = ({ onCheckout }: OfertaSectionProps) => {
           </div>
           <p className="mt-4 text-slate-500 text-sm md:text-base font-bold">ou R$ 497,00 à vista</p>
           <p className="text-brand-green/50 text-xs mt-1 uppercase tracking-[0.3em] font-black">12 meses de acesso, evolução e resultados reais</p>
-          <p className="mt-6 text-white font-bold text-base md:text-lg">Mais de <span className="text-brand-green">R$ 4.994 em valor</span> — seu hoje por R$ 497, com acesso imediato.</p>
+          <p className="mt-6 text-white font-bold text-base md:text-lg">Mais de <span className="text-brand-green">R$ 2.494 em valor</span> — seu hoje por R$ 497, com acesso imediato.</p>
         </div>
 
         <button onClick={onCheckout} className="btn-shine w-full bg-brand-green text-black font-black text-lg md:text-xl py-6 md:py-8 px-8 md:px-12 rounded-3xl hover:bg-brand-green/90 hover:scale-[1.03] transition-all shadow-[0_0_50px_rgba(34,197,94,0.5)] flex items-center justify-center gap-4 mx-auto group active:scale-95 duration-200 glow-pulse">

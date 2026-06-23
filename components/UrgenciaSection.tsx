@@ -23,14 +23,14 @@ const UrgenciaSection: React.FC<UrgenciaSectionProps> = ({ onCheckout }) => {
         </h2>
 
         <p className="text-black/60 text-lg md:text-xl font-medium mb-10">
-          Mais de R$ 4.994 em valor por R$ 497 — comece hoje, sem risco.
+          Mais de R$ 2.494 em valor por R$ 497 — comece hoje, sem risco.
         </p>
 
         {/* Price block — with animated border */}
         <div className="reveal animated-border bg-black/20 rounded-3xl p-6 md:p-8 mb-10 max-w-md mx-auto">
           <div className="flex items-center justify-between mb-3">
             <span className="text-black/60 font-bold">Valor total:</span>
-            <span className="text-black/40 font-black text-xl line-through">R$ 4.994,00</span>
+            <span className="text-black/40 font-black text-xl line-through">R$ 2.494,00</span>
           </div>
           <div className="flex items-center justify-between">
             <span className="text-black font-black text-lg">Agora:</span>

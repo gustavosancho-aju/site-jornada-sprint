@@ -33,7 +33,7 @@ const FAQSection: React.FC = () => {
     },
     {
       question: "R$ 497 é caro?",
-      answer: "Depende com o que você compara. Uma única peça desse ecossistema vale mais que isso: as imersões sozinhas valem R$ 1.497, o Hub de Soluções R$ 997, e a mentoria individual 1:1 sairia R$ 2.500. Você leva tudo — mais 12 meses de acesso, lives mensais e atualizações — por R$ 497. É menos que um mês de agência, editor ou desenvolvedor. A pergunta certa não é 'é caro?', é 'quanto custa continuar fazendo tudo no braço por mais um ano?'."
+      answer: "Depende com o que você compara. Uma única peça desse ecossistema vale mais que isso: as imersões sozinhas valem R$ 1.497 e o Hub de Soluções R$ 997 — e ainda inclui mentoria individual 1:1, lives mensais e atualizações. Você leva tudo por R$ 497. É menos que um mês de agência, editor ou desenvolvedor. A pergunta certa não é 'é caro?', é 'quanto custa continuar fazendo tudo no braço por mais um ano?'."
     },
     {
       question: "Quais são as formas de pagamento?",
