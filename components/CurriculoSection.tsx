@@ -29,7 +29,7 @@ const CurriculoSection: React.FC = () => {
             <span className="text-brand-green">8 Transformações.</span>
           </h2>
           <p className="text-slate-400 mt-6 text-lg md:text-xl max-w-2xl text-center">
-            Cada jornada entrega um resultado concreto. Você não sai com teoria — sai com algo funcionando.
+            Cada imersão é uma Jornada completa — e entrega um resultado concreto. Você não sai com teoria, sai com algo funcionando.
           </p>
         </div>
 
